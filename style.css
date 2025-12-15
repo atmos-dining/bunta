@@ -1,0 +1,752 @@
+/* --------------- reset & base --------------- */
+
+:root {
+  --header-h: 112px; /* ← まず仮。あとで微調整する */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", YuGothic,
+    "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  color: #222;
+  background-color: #faf7f4;
+  line-height: 1.7;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+/* --------------- layout helpers --------------- */
+
+.section {
+  padding: 72px 16px;
+  /* 固定ヘッダーの分、アンカー移動時に見出しが隠れないようにする */
+  scroll-margin-top: var(--header-h);
+}
+
+.section-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 28px;
+  letter-spacing: 0.08em;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.section-lead {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #666;
+}
+
+/* --------------- buttons --------------- */
+
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background-color: #c5322d;
+  color: #fff;
+  border-color: #c5322d;
+}
+
+.btn-primary:hover {
+  background-color: #a72a25;
+  border-color: #a72a25;
+}
+
+.btn-secondary {
+  background-color: #fff;
+  color: #c5322d;
+  border-color: #c5322d;
+}
+
+.btn-secondary:hover {
+  background-color: #fdf2f2;
+}
+
+/* --------------- header --------------- */
+
+.site-header {
+  position: fixed;      /* ← ヒーローの上に乗せる */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  background: rgba(20, 20, 20, 0.6);  /* ← 最初は透明 */
+  backdrop-filter: blur(0px);
+  color: #fff;
+
+  transition: background 0.25s ease, backdrop-filter 0.25s ease;
+}
+
+.header-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.header-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.site-logo {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.site-tagline {
+  font-size: 12px;
+  color: #ddd;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-tel {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.tel-label {
+  font-size: 11px;
+  color: #ddd;
+}
+
+.tel-number {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.header-reserve {
+  font-size: 13px;
+}
+
+/* global nav */
+
+.global-nav {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.global-nav ul {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 4px 16px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.global-nav a {
+  display: block;
+  padding: 6px 0;
+  font-size: 13px;
+  color: #f5f5f5;
+}
+
+.global-nav a:hover {
+  color: #ffdfb6;
+}
+
+/* --------------- hero --------------- */
+
+.hero {
+  position: relative;
+  height: 100vh;
+  height: 100svh;
+  height: 100dvh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding-bottom: 70px;
+
+  color: #fff;
+  text-align: left;
+
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65)),
+    url("./images/hero-bunta.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 80px 16px;
+}
+
+.hero-eyebrow {
+  font-size: 14px;
+  letter-spacing: 0.25em;
+  margin-bottom: 8px;
+}
+
+.hero-title {
+  font-size: 34px;
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+.hero-lead {
+  font-size: 15px;
+  margin-bottom: 24px;
+  color: #f5f5f5;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* --------------- hero scroll indicator --------------- */
+
+.scroll-indicator__text {
+  font-size: 15px;
+  letter-spacing: 0.2em;
+  margin-bottom: 4px;
+  opacity: 0.85;
+}
+
+.scroll-indicator {
+  position: absolute;
+  left: 50%;
+  bottom: calc(28px + env(safe-area-inset-bottom, 0px));
+  transform: translateX(-50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: #fff;
+  text-decoration: none;
+
+  z-index: 2;
+}
+
+.scroll-indicator:hover {
+  transform: translateX(-50%) translateY(-2px);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.scroll-indicator__arrow {
+  font-size: 18px;
+  line-height: 1;
+  animation: scrollBounce 1.6s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+  0% { transform: translateY(0); opacity: 0.85; }
+  50% { transform: translateY(6px); opacity: 1; }
+  100% { transform: translateY(0); opacity: 0.85; }
+}
+
+/* スマホで少し上げる（タイポ修正＆二重定義整理） */
+@media (max-width: 640px) {
+  .scroll-indicator {
+    bottom: calc(28px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* --------------- topics --------------- */
+
+.topics {
+  background-color: #fff;
+}
+
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.topic-card {
+  background-color: #fffdf9;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.topic-image {
+  aspect-ratio: 16 / 12;
+  background-size: cover;
+  background-position: center;
+}
+
+/* ここは後で実際の店内写真に差し替え */
+.topic-image-1 {
+  background-image: url("./images/topic-megakarubi.jpg");
+}
+
+.topic-image-2 {
+  background-image: url("./images/topic-horumon.jpg");
+}
+
+.topic-image-3 {
+  background-image: url("./images/topic-inside.jpg");
+}
+
+.topic-card h3 {
+  font-size: 16px;
+  padding: 12px 16px 4px;
+}
+
+.topic-card p {
+  font-size: 14px;
+  padding: 0 16px 16px;
+  color: #555;
+}
+
+/* --------------- concept --------------- */
+
+.concept {
+  background-color: #faf3ec;
+}
+
+.concept-inner {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.concept-text p {
+  margin-bottom: 12px;
+  color: #444;
+}
+
+.concept-image {
+  border-radius: 16px;
+  aspect-ratio: 16 / 12;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+/* 後で差し替え */
+.concept-main-image {
+  background-image: url("./images/concept-bunta.jpg");
+}
+
+/* --------------- course --------------- */
+
+.course {
+  background-color: #fff;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.course-card {
+  background-color: #fffdf9;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.course-card h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.course-price {
+  font-weight: 700;
+  color: #c5322d;
+  margin-bottom: 12px;
+}
+
+.course-list {
+  font-size: 14px;
+  color: #555;
+  padding-left: 1.2em;
+  list-style: disc;
+}
+
+.course-note {
+  font-size: 13px;
+  text-align: center;
+  margin-top: 24px;
+  color: #777;
+}
+
+/* --------------- menu --------------- */
+
+.menu {
+  background-color: #faf7f4;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.menu-card {
+  background-color: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.menu-image {
+  aspect-ratio: 16 / 12;
+  background-size: cover;
+  background-position: center;
+}
+
+/* 後で差し替え */
+.menu-image-1 {
+  background-image: url("./images/menu-megakarubi.jpg");
+}
+.menu-image-2 {
+  background-image: url("./images/menu-marucho.jpg");
+}
+.menu-image-3 {
+  background-image: url("./images/menu-nikuzushi.jpg");
+}
+
+.menu-card h3 {
+  font-size: 16px;
+  padding: 12px 16px 4px;
+}
+
+.menu-card p {
+  font-size: 14px;
+  padding: 0 16px 16px;
+  color: #555;
+}
+
+/* --------------- drink --------------- */
+
+.drink {
+  background-color: #fff;
+}
+
+.drink-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.drink-card {
+  background-color: #fffdf9;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  font-size: 14px;
+  color: #555;
+}
+
+.drink-card h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+/* --------------- space --------------- */
+
+.space {
+  background-color: #faf3ec;
+}
+
+.space-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.space-text p {
+  margin-bottom: 12px;
+  color: #444;
+}
+
+.space-image {
+  border-radius: 16px;
+  aspect-ratio: 16 / 12;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+/* 後で差し替え */
+.space-main-image {
+  background-image: url("./images/space-bunta.jpg");
+}
+
+/* --------------- reserve --------------- */
+
+.reserve {
+  background-color: #fff;
+}
+
+.reserve-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.reserve-block {
+  background-color: #fffdf9;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.reserve-block h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.reserve-tel-label {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 2px;
+}
+
+.reserve-tel-number a {
+  font-size: 24px;
+  font-weight: 700;
+  color: #c5322d;
+}
+
+.reserve-time {
+  font-size: 13px;
+  color: #666;
+  margin-top: 6px;
+}
+
+.btn-reserve-disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* --------------- access --------------- */
+
+.access-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;   /* 左50% 右50% */
+  gap: 32px;
+  align-items: stretch;             /* ← 高さを揃える最重要ポイント！ */
+}
+
+.access-map {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  overflow: hidden;
+}
+
+.access-map iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;                 /* お好みで調整可能 */
+  display: block;
+}
+
+/* スマホでは縦並びにする（予約ブロックと同じ） */
+@media (max-width: 900px) {
+  .access-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------- footer --------------- */
+
+.site-footer {
+  background-color: #151515;
+  color: #eee;
+  padding: 32px 16px 16px;
+}
+
+.footer-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-brand p {
+  margin-top: 4px;
+  font-size: 13px;
+  color: #bbb;
+}
+
+.footer-contact {
+  text-align: right;
+}
+
+.footer-tel-label {
+  font-size: 12px;
+  color: #bbb;
+  margin-bottom: 2px;
+}
+
+.footer-tel-number a {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.footer-reserve {
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 8px;
+  text-align: center;
+}
+
+.footer-copy {
+  font-size: 12px;
+  color: #888;
+}
+
+/* --------------- responsive --------------- */
+
+@media (max-width: 900px) {
+  .hero-title {
+    font-size: 26px;
+  }
+
+  .topics-grid,
+  .course-grid,
+  .menu-grid,
+  .drink-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .concept-inner,
+  .space-inner,
+  .access-grid,
+  .reserve-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .global-nav ul {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 900px) {
+  :root {
+    --header-h: 175px;  /* ← スマホはヘッダーが高いので増やす */
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 56px 12px;
+  }
+
+  .section-title {
+    font-size: 22px;
+  }
+
+  .topics-grid,
+  .course-grid,
+  .menu-grid,
+  .drink-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    text-align: left;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-contact {
+    text-align: left;
+  }
+}
