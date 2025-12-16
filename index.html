@@ -7,30 +7,80 @@
   <meta name="description" content="西新駅徒歩5分の大衆焼肉ぶんた。壺漬けメガカルビやホルモン、肉寿司など名物焼肉とお酒を気軽に楽しめる大衆焼肉店。各種飲み会・宴会に。">
   <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
 
   <!-- ヘッダー -->
+  
   <header class="site-header">
-    <div class="header-inner">
-      <div class="header-brand">
-        <div class="site-logo">【公式】大衆焼肉ぶんた</div>
-        <div class="site-tagline">西新駅徒歩5分の大衆焼肉</div>
-      </div>
-
-      <div class="header-right">
-        <div class="header-tel">
-          <span class="tel-label">ご予約・お問い合わせ</span>
-          <a href="tel:0924071179" class="tel-number">092-407-1179</a>
-        </div>
-        <a href="https://yoyaku.toreta.in/bunta" target="_blank" rel="noopener" class="btn-primary header-reserve">
-          ネット予約はこちら
-        </a>
-      </div>
+  <div class="header-inner">
+    <div class="header-brand">
+      <div class="site-logo">【公式】大衆焼肉ぶんた</div>
+      <div class="site-tagline">西新駅徒歩5分の大衆焼肉</div>
     </div>
 
-    <nav class="global-nav">
+    <div class="header-right">
+      <div class="header-tel header-only-desktop">
+        <span class="tel-label">ご予約・お問い合わせ</span>
+        <a href="tel:0924071179" class="tel-number">092-407-1179</a>
+      </div>
+
+      <a href="https://yoyaku.toreta.in/bunta"
+         target="_blank" rel="noopener"
+         class="btn-primary header-reserve header-only-desktop">
+        ネット予約はこちら
+      </a>
+
+      <!-- スマホ用：三本線 -->
+      <button class="nav-toggle" type="button" aria-label="メニューを開く" aria-expanded="false">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- PC用ナビ（そのまま表示） -->
+  <nav class="global-nav header-only-desktop">
+    <ul>
+      <li><a href="#top">トップ</a></li>
+      <li><a href="#concept">ぶんたのこだわり</a></li>
+      <li><a href="#course">ご宴会コース</a></li>
+      <li><a href="#menu">お料理</a></li>
+      <li><a href="#drink">ドリンク</a></li>
+      <li><a href="#space">店内・空間</a></li>
+      <li><a href="#access">アクセス</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- スマホ用：右から出るメニュー -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <button class="drawer-close" type="button" aria-label="閉じる">×</button>
+  <nav>
+    <ul>
+      <li><a href="#top">トップ</a></li>
+      <li><a href="#concept">ぶんたのこだわり</a></li>
+      <li><a href="#course">ご宴会コース</a></li>
+      <li><a href="#menu">お料理</a></li>
+      <li><a href="#drink">ドリンク</a></li>
+      <li><a href="#space">店内・空間</a></li>
+      <li><a href="#access">アクセス</a></li>
+    </ul>
+  </nav>
+</aside>
+
+
+  <!-- スマホ用：オーバーレイ -->
+  <div class="drawer-overlay" data-close="drawer" aria-hidden="true"></div>
+
+  <!-- スマホ用：右から出るドロワー -->
+  <aside class="drawer" id="drawerMenu" aria-label="スマホメニュー" aria-hidden="true">
+    <button class="drawer-close" type="button" aria-label="メニューを閉じる" data-close="drawer">×</button>
+    <nav>
       <ul>
-        <li><a href="#top">トップ</a></li>
+        <li><a href="#top">トップページ</a></li>
         <li><a href="#concept">ぶんたのこだわり</a></li>
         <li><a href="#course">ご宴会コース</a></li>
         <li><a href="#menu">お料理</a></li>
@@ -39,7 +89,7 @@
         <li><a href="#access">アクセス</a></li>
       </ul>
     </nav>
-  </header>
+  </aside>
 
   <!-- メイン -->
   <main id="top">
@@ -78,28 +128,19 @@
           <article class="topic-card">
             <div class="topic-image topic-image-1"></div>
             <h3>ぶんた名物 壺漬けメガカルビ</h3>
-            <p>
-              特製ダレにじっくり漬け込んだ名物メガカルビ。豪快に焼いて、
-              みんなでシェアして楽しめる人気メニューです。
-            </p>
+            <p>特製ダレにじっくり漬け込んだ名物メガカルビ。豪快に焼いて、みんなでシェアして楽しめる人気メニューです。</p>
           </article>
 
           <article class="topic-card">
             <div class="topic-image topic-image-2"></div>
             <h3>ホルモン好きも大満足</h3>
-            <p>
-              極上丸腸をはじめ、ホルモンメニューも充実。
-              ビールやハイボールとの相性も抜群です。
-            </p>
+            <p>極上丸腸をはじめ、ホルモンメニューも充実。ビールやハイボールとの相性も抜群です。</p>
           </article>
 
           <article class="topic-card">
             <div class="topic-image topic-image-3"></div>
             <h3>少人数から大人数までOK</h3>
-            <p>
-              カウンター席、テーブル席、掘りごたつ席をご用意。
-              会社帰りのさくっと飲みからご宴会まで幅広くご利用いただけます。
-            </p>
+            <p>カウンター席、テーブル席、掘りごたつ席をご用意。会社帰りのさくっと飲みからご宴会まで幅広くご利用いただけます。</p>
           </article>
         </div>
       </div>
@@ -110,19 +151,9 @@
       <div class="section-inner concept-inner">
         <div class="concept-text">
           <h2 class="section-title">名物焼肉×お酒<br>西新の大衆焼肉「ぶんた」</h2>
-          <p>
-            「旨さと価格に妥協なし」を合言葉に、
-            気軽に通える大衆焼肉として地域の方に愛されてきた「大衆焼肉ぶんた」。
-          </p>
-          <p>
-            壺漬けメガカルビをはじめとした名物メニューに、
-            ホルモン、肉寿司、一品料理まで幅広くご用意。
-            飲み放題付きコースも各種取り揃えております。
-          </p>
-          <p>
-            仕事帰りの一杯、友人との飲み会、会社宴会、打ち上げなど、
-            さまざまなシーンでご利用ください。
-          </p>
+          <p>「旨さと価格に妥協なし」を合言葉に、気軽に通える大衆焼肉として地域の方に愛されてきた「大衆焼肉ぶんた」。</p>
+          <p>壺漬けメガカルビをはじめとした名物メニューに、ホルモン、肉寿司、一品料理まで幅広くご用意。飲み放題付きコースも各種取り揃えております。</p>
+          <p>仕事帰りの一杯、友人との飲み会、会社宴会、打ち上げなど、さまざまなシーンでご利用ください。</p>
         </div>
         <div class="concept-image concept-main-image"></div>
       </div>
@@ -132,10 +163,7 @@
     <section id="course" class="section course">
       <div class="section-inner">
         <h2 class="section-title">ご宴会コース</h2>
-        <p class="section-lead">
-          飲み放題付きの焼肉宴会コースを3種類ご用意。<br>
-          ご予算やシーンに合わせてお選びいただけます。
-        </p>
+        <p class="section-lead">飲み放題付きの焼肉宴会コースを3種類ご用意。<br>ご予算やシーンに合わせてお選びいただけます。</p>
 
         <div class="course-grid">
           <article class="course-card">
@@ -167,15 +195,12 @@
               <li>たれ漬けメガカルビ！</li>
               <li>名物メニューを贅沢に盛り込んだ内容</li>
               <li>特上3種盛り等々</li>
-              <li>２時間飲み放題付き</li>
+              <li>2時間飲み放題付き</li>
             </ul>
           </article>
         </div>
 
-        <p class="course-note">
-          ※コース内容・価格は一例です。時期により変更となる場合がございます。<br>
-          詳細は店舗までお問い合わせください。
-        </p>
+        <p class="course-note">※コース内容・価格は一例です。時期により変更となる場合がございます。<br>詳細は店舗までお問い合わせください。</p>
       </div>
     </section>
 
@@ -183,37 +208,25 @@
     <section id="menu" class="section menu">
       <div class="section-inner">
         <h2 class="section-title">お料理</h2>
-        <p class="section-lead">
-          名物のたれ漬けメガカルビをはじめ、ホルモン、肉寿司、一品料理まで<br>
-          お酒が進むメニューを多数ご用意しています。
-        </p>
+        <p class="section-lead">名物のたれ漬けメガカルビをはじめ、ホルモン、肉寿司、一品料理まで<br>お酒が進むメニューを多数ご用意しています。</p>
 
         <div class="menu-grid">
           <article class="menu-card">
             <div class="menu-image menu-image-1"></div>
             <h3>たれ漬けメガカルビ</h3>
-            <p>
-              特製醤油ダレに漬け込んだ迫力満点のメガカルビ。
-              テーブルが一気に盛り上がるぶんた定番の一品です。
-            </p>
+            <p>特製醤油ダレに漬け込んだ迫力満点のメガカルビ。テーブルが一気に盛り上がるぶんた定番の一品です。</p>
           </article>
 
           <article class="menu-card">
             <div class="menu-image menu-image-2"></div>
             <h3>極上丸腸</h3>
-            <p>
-              プリっとした食感と、口の中に広がる甘い脂がたまらない極上丸腸。
-              ビールやハイボールと一緒にどうぞ。
-            </p>
+            <p>プリっとした食感と、口の中に広がる甘い脂がたまらない極上丸腸。ビールやハイボールと一緒にどうぞ。</p>
           </article>
 
           <article class="menu-card">
             <div class="menu-image menu-image-3"></div>
             <h3>上質白ごはん・一品料理</h3>
-            <p>
-              サラダ、キムチ、〆のごはんものまで、
-              焼肉と一緒に楽しめるメニューを豊富に取り揃えています。
-            </p>
+            <p>サラダ、キムチ、〆のごはんものまで、焼肉と一緒に楽しめるメニューを豊富に取り揃えています。</p>
           </article>
         </div>
       </div>
@@ -223,34 +236,22 @@
     <section id="drink" class="section drink">
       <div class="section-inner">
         <h2 class="section-title">ドリンク</h2>
-        <p class="section-lead">
-          生ビール、ハイボール、サワー、焼酎、梅酒など、<br>
-          焼肉にぴったりのドリンクを取り揃えております。
-        </p>
+        <p class="section-lead">生ビール、ハイボール、サワー、焼酎、梅酒など、<br>焼肉にぴったりのドリンクを取り揃えております。</p>
 
         <div class="drink-grid">
           <article class="drink-card">
             <h3>生ビール・ハイボール</h3>
-            <p>
-              キンキンに冷えた生ビールとハイボールは、
-              どの焼肉メニューとも相性抜群。まずは一杯どうぞ。
-            </p>
+            <p>キンキンに冷えた生ビールとハイボールは、どの焼肉メニューとも相性抜群。まずは一杯どうぞ。</p>
           </article>
 
           <article class="drink-card">
             <h3>サワー・カクテル</h3>
-            <p>
-              レモンサワーなどの定番から、飲みやすいカクテルまでご用意。
-              飲み放題メニューも充実しています。
-            </p>
+            <p>レモンサワーなどの定番から、飲みやすいカクテルまでご用意。飲み放題メニューも充実しています。</p>
           </article>
 
           <article class="drink-card">
             <h3>焼酎・梅酒</h3>
-            <p>
-              焼酎、梅酒も各種取り揃えております。
-              お好みの一杯を見つけて、焼肉と一緒にお楽しみください。
-            </p>
+            <p>焼酎、梅酒も各種取り揃えております。お好みの一杯を見つけて、焼肉と一緒にお楽しみください。</p>
           </article>
         </div>
       </div>
@@ -261,16 +262,9 @@
       <div class="section-inner space-inner">
         <div class="space-text">
           <h2 class="section-title">店内・空間</h2>
-          <p>
-            総席数 40席前後。カウンター席、テーブル席、掘りごたつ席をご用意しております。
-          </p>
-          <p>
-            お一人様でのさく飲みや、少人数での飲み会はもちろん、
-            グループでのご宴会にも対応可能です。
-          </p>
-          <p>
-            席のレイアウト変更や貸切などについても、お気軽にご相談ください。
-          </p>
+          <p>総席数 40席前後。カウンター席、テーブル席、掘りごたつ席をご用意しております。</p>
+          <p>お一人様でのさく飲みや、少人数での飲み会はもちろん、グループでのご宴会にも対応可能です。</p>
+          <p>席のレイアウト変更や貸切などについても、お気軽にご相談ください。</p>
         </div>
         <div class="space-image space-main-image"></div>
       </div>
@@ -280,35 +274,20 @@
     <section id="reserve" class="section reserve">
       <div class="section-inner">
         <h2 class="section-title">ご予約について</h2>
-        <p class="section-lead">
-          お電話またはネット予約にて承っております。<br>
-          席のみ予約・コース予約、どちらもお気軽にお問い合わせください。
-        </p>
+        <p class="section-lead">お電話またはネット予約にて承っております。<br>席のみ予約・コース予約、どちらもお気軽にお問い合わせください。</p>
 
         <div class="reserve-grid">
           <div class="reserve-block">
             <h3>お電話でのご予約</h3>
             <p class="reserve-tel-label">電話番号</p>
-            <p class="reserve-tel-number">
-              <a href="tel:0924071179">092-407-1179</a>
-            </p>
-            <p class="reserve-time">
-              受付時間：営業日の 17:00〜ラストまで
-            </p>
+            <p class="reserve-tel-number"><a href="tel:0924071179">092-407-1179</a></p>
+            <p class="reserve-time">受付時間：営業日の 17:00〜ラストまで</p>
           </div>
 
           <div class="reserve-block">
             <h3>ネット予約</h3>
-            <p>
-              24時間受付のネット予約ページからご予約いただけます。<br>
-              コース予約・席のみ予約どちらも承っております。
-            </p>
-            <a
-              href="https://yoyaku.toreta.in/bunta"
-              target="_blank"
-              rel="noopener"
-              class="btn-primary"
-            >
+            <p>24時間受付のネット予約ページからご予約いただけます。<br>コース予約・席のみ予約どちらも承っております。</p>
+            <a href="https://yoyaku.toreta.in/bunta" target="_blank" rel="noopener" class="btn-primary">
               ネット予約ページへ
             </a>
           </div>
@@ -322,7 +301,6 @@
         <h2 class="section-title">店舗情報・アクセス</h2>
 
         <div class="access-grid">
-          <!-- 左：文字情報 -->
           <div class="access-text">
             <h3 class="shop-name">大衆焼肉ぶんた</h3>
 
@@ -331,10 +309,7 @@
               <dd>〒814-0005<br>福岡県福岡市早良区祖原3-3</dd>
 
               <dt>アクセス</dt>
-              <dd>
-                地下鉄空港線「西新駅」2番出口 徒歩5分<br>
-                西新テングットシティから荒江方面へ徒歩1分／ローソン向かい
-              </dd>
+              <dd>地下鉄空港線「西新駅」2番出口 徒歩5分<br>西新テングットシティから荒江方面へ徒歩1分／ローソン向かい</dd>
 
               <dt>電話番号</dt>
               <dd><a href="tel:0924071179">092-407-1179</a></dd>
@@ -349,23 +324,21 @@
               <dd>年中無休</dd>
 
               <dt>決済方法</dt>
-              <dd>
-                クレジットカード：VISA／Master／JCB／AMEX ほか<br>
-                QRコード決済：PayPay ほか
-              </dd>
+              <dd>クレジットカード：VISA／Master／JCB／AMEX ほか<br>QRコード決済：PayPay ほか</dd>
             </dl>
           </div>
 
-          <!-- 右：地図 -->
           <div class="access-map">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4258.13734185838!2d130.36282609931123!3d33.579844264364596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x354193a35f14dc65%3A0x18af9d662d729687!2z5aSn6KGG54S86IKJ44G244KT44Gf!5e1!3m2!1sja!2sjp!4v1765434951451!5m2!1sja!2sjp"
-              style="border:0;"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4615.563490006952!2d130.3606155698338!3d33.580221100068535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x354193a35f14dc65%3A0x18af9d662d729687!2z5aSn6KGG54S86IKJ44G244KT44Gf!5e1!3m2!1sja!2sjp!4v1765865368383!5m2!1sja!2sjp"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+
         </div>
       </div>
     </section>
@@ -382,9 +355,7 @@
         </div>
         <div class="footer-contact">
           <p class="footer-tel-label">電話でのご予約はこちら</p>
-          <p class="footer-tel-number">
-            <a href="tel:0924071179">092-407-1179</a>
-          </p>
+          <p class="footer-tel-number"><a href="tel:0924071179">092-407-1179</a></p>
           <a href="https://yoyaku.toreta.in/bunta" target="_blank" rel="noopener" class="btn-primary footer-reserve">
             ネット予約はこちら
           </a>
@@ -392,12 +363,47 @@
       </div>
 
       <div class="footer-bottom">
-        <p class="footer-copy">
-          © 2025 大衆焼肉ぶんた. All rights reserved.
-        </p>
+        <p class="footer-copy">© 2025 大衆焼肉ぶんた. All rights reserved.</p>
       </div>
     </div>
   </footer>
+
+  <script>
+    const btn = document.querySelector('.nav-toggle');
+    const drawer = document.querySelector('#drawerMenu');
+    const overlay = document.querySelector('.drawer-overlay');
+
+    function openDrawer() {
+      drawer.classList.add('is-open');
+      overlay.classList.add('is-open');
+      btn.setAttribute('aria-expanded', 'true');
+      drawer.setAttribute('aria-hidden', 'false');
+      overlay.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeDrawer() {
+      drawer.classList.remove('is-open');
+      overlay.classList.remove('is-open');
+      btn.setAttribute('aria-expanded', 'false');
+      drawer.setAttribute('aria-hidden', 'true');
+      overlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    btn?.addEventListener('click', () => {
+      drawer.classList.contains('is-open') ? closeDrawer() : openDrawer();
+    });
+
+    document.querySelectorAll('[data-close="drawer"]').forEach(el => {
+      el.addEventListener('click', closeDrawer);
+    });
+
+    drawer?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeDrawer();
+    });
+  </script>
 
 </body>
 </html>
