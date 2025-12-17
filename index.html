@@ -374,6 +374,9 @@
     </div>
   </footer>
 
+  <!-- ページトップボタン -->
+    <a href="#top" class="page-top" aria-label="ページの先頭へ戻る">＾</a>
+
   <script>
     const btn = document.querySelector('.nav-toggle');
     const drawer = document.querySelector('#drawerMenu');
@@ -409,6 +412,20 @@
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeDrawer();
     });
+
+      // ページトップボタン：一定スクロールで表示
+  const pageTop = document.querySelector('.page-top');
+
+  function togglePageTop(){
+    if(!pageTop) return;
+    const y = window.scrollY || document.documentElement.scrollTop;
+    if (y > 480) pageTop.classList.add('is-show');
+    else pageTop.classList.remove('is-show');
+  }
+
+  window.addEventListener('scroll', togglePageTop, { passive: true });
+  togglePageTop();
+
   </script>
 
 </body>

@@ -78,6 +78,46 @@ h1,h2,h3,h4{
   color: #fff;
   border-color: #c5322d;
 }
+
+/* --------------- page top button --------------- */
+.page-top{
+  position: fixed;
+  right: 18px;
+  bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+
+  display: grid;
+  place-items: center;
+
+  background: #c5322d;  /* ← 予約ボタンと同色 */
+  color: #fff;
+  border: 1px solid #c5322d; /* ← 予約ボタンと同色 */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+
+  font-size: 35px;
+  line-height: 1;
+  z-index: 900; /* drawer(1001)より下、通常表示より上 */
+
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity .18s ease, transform .18s ease, background-color .18s ease;
+}
+
+.page-top.is-show{
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.page-top:hover{
+  background: #a72a25;  /* ← btn-primary:hover と同じ */
+  border-color: #a72a25;
+}
+
+
 .btn-primary:hover{
   background-color: #a72a25;
   border-color: #a72a25;
