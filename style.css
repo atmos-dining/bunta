@@ -12,8 +12,7 @@ html { scroll-behavior: smooth; }
 
 body{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", YuGothic,
-    "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-family: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif;
   color: #222;
   background-color: #faf7f4;
   line-height: 1.7;
@@ -29,7 +28,11 @@ a{ color: inherit; text-decoration: none; }
 
 ul{ margin: 0; padding: 0; list-style: none; }
 
-h1,h2,h3,h4{ margin: 0; }
+h1,h2,h3,h4{
+  margin: 0;
+  font-weight: 700;
+}
+
 
 /* --------------- layout helpers --------------- */
 
@@ -276,7 +279,7 @@ h1,h2,h3,h4{ margin: 0; }
   text-align: left;
 
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65)),
+    linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.35)),
     url("./images/hero-bunta.jpg");
   background-size: cover;
   background-position: center;
