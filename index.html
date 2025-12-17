@@ -246,20 +246,24 @@
 
         <div class="drink-grid">
           <article class="drink-card">
+            <div class="drink-image drink-image-1"></div>
             <h3>生ビール・ハイボール</h3>
             <p>キンキンに冷えた生ビールとハイボールは、どの焼肉メニューとも相性抜群。まずは一杯どうぞ。</p>
           </article>
 
           <article class="drink-card">
+            <div class="drink-image drink-image-2"></div>
             <h3>サワー・カクテル</h3>
             <p>レモンサワーなどの定番から、飲みやすいカクテルまでご用意。飲み放題メニューも充実しています。</p>
           </article>
 
           <article class="drink-card">
+            <div class="drink-image drink-image-3"></div>
             <h3>焼酎・梅酒</h3>
             <p>焼酎、梅酒も各種取り揃えております。お好みの一杯を見つけて、焼肉と一緒にお楽しみください。</p>
           </article>
         </div>
+
       </div>
     </section>
 
@@ -425,6 +429,24 @@
 
   window.addEventListener('scroll', togglePageTop, { passive: true });
   togglePageTop();
+
+  // セクション：スクロールで下からシュッと表示
+  const sections = document.querySelectorAll('.section');
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('is-inview');
+        io.unobserve(entry.target); // 一回出たら監視を外す（軽い）
+      }
+    });
+  }, {
+    root: null,
+    threshold: 0.12,
+    rootMargin: '0px 0px -10% 0px' // 少し手前で発火
+  });
+
+  sections.forEach(sec => io.observe(sec));
 
   </script>
 

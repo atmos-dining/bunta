@@ -41,6 +41,29 @@ h1,h2,h3,h4{
   scroll-margin-top: var(--header-h);
 }
 
+/* --------------- scroll reveal --------------- */
+.section{
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .6s ease, transform .6s ease;
+  will-change: opacity, transform;
+}
+
+.section.is-inview{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ユーザーが「動きを減らす」設定のときはアニメを切る */
+@media (prefers-reduced-motion: reduce){
+  .section{
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+
 .section-inner{
   max-width: 1080px;
   margin: 0 auto;
@@ -99,6 +122,7 @@ h1,h2,h3,h4{
   font-size: 35px;
   line-height: 1;
   z-index: 900; /* drawer(1001)より下、通常表示より上 */
+  transform: scaleX(1.6); /* ← 角度が広がって見える */
 
   opacity: 0;
   transform: translateY(10px);
@@ -546,18 +570,34 @@ h1,h2,h3,h4{
 }
 
 .drink-card{
-  background-color: #fffdf9;
+  background-color: #fff;
   border-radius: 16px;
-  padding: 20px;
+  overflow: hidden;
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  font-size: 14px;
-  color: #555;
 }
-
 .drink-card h3{
   font-size: 16px;
-  margin-bottom: 8px;
+  padding: 12px 16px 4px;
+  margin: 0;
 }
+.drink-card p{
+  font-size: 14px;
+  padding: 0 16px 16px;
+  color: #555;
+  margin: 0;
+}
+
+.drink-image{
+  aspect-ratio: 16 / 12;
+  background-size: cover;
+  background-position: center;
+}
+
+/* 画像パスは用意した写真に合わせて変更 */
+.drink-image-1{ background-image: url("./images/drink-beer.jpg"); }
+.drink-image-2{ background-image: url("./images/drink-sour.jpg"); }
+.drink-image-3{ background-image: url("./images/drink-shochu.jpg"); }
+
 
 /* --------------- space --------------- */
 
