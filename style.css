@@ -482,6 +482,22 @@ h1,h2,h3,h4{
 
 /* --------------- course --------------- */
 
+/* course: section image */
+.course-hero{
+  margin: 18px auto 26px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+  max-width: 1080px;
+}
+
+.course-hero img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
 .course{ background-color: #fff; }
 
 .course-grid{
@@ -521,6 +537,52 @@ h1,h2,h3,h4{
   margin-top: 24px;
   color: #777;
 }
+
+/* course: badges */
+.course-badges{
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 8px 0 14px;
+}
+
+.badge{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  border: 1px solid #ddd;
+  background: #fff;
+  color: #333;
+}
+
+.badge-red{
+  border-color: #c5322d;
+  background: #c5322d;
+  color: #fff;
+}
+
+/* course: small note inside card */
+.course-note-small{
+  font-size: 12px;
+  color: #777;
+  margin-top: 12px;
+}
+
+/* course: extension banner */
+.course-extra{
+  margin-top: 22px;
+  background: #0f7b6c;
+  color: #fff;
+  border-radius: 12px;
+  padding: 14px 16px;
+  text-align: center;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+}
+
 
 /* --------------- menu --------------- */
 
@@ -851,4 +913,41 @@ h1,h2,h3,h4{
 /* スマホだけ表示 */
 @media (max-width: 900px){
   .nav-toggle{ display: flex !important; }
+}
+
+/* TOPページでは「トップページに戻る」を出さない */
+.is-home .back-to-top-home{
+  display: none;
+}
+
+/* 下層ページ：固定ヘッダー分だけ上に余白を作る */
+body:not(.is-home) main{
+  padding-top: calc(var(--header-h) + 16px);
+}
+
+/* もっと見るボタン（共通） */
+.more-wrap{
+  margin-top: 26px;
+  text-align: center;
+}
+
+.btn-more{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+
+  background: #fff;
+  color: #c5322d;
+  border: 1px solid #c5322d;
+  transition: transform .18s ease, background-color .18s ease;
+}
+
+.btn-more:hover{
+  transform: translateY(-1px);
+  background-color: #fdf2f2;
 }
