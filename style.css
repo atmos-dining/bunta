@@ -951,3 +951,273 @@ body:not(.is-home) main{
   transform: translateY(-1px);
   background-color: #fdf2f2;
 }
+
+/* =========================================
+   Menu page (menu.html)
+========================================= */
+
+.page-head{
+  padding-top: calc(var(--header-h) + 24px);
+}
+
+.page-title{
+  text-align: center;
+  font-size: 34px;
+  letter-spacing: .08em;
+  margin-bottom: 10px;
+}
+
+.page-lead{
+  text-align: center;
+  color: #666;
+  margin: 0;
+}
+
+/* cards / panels */
+.mp-grid{
+  display: grid;
+  gap: 18px;
+}
+
+.mp-grid--feature{
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.mp-grid--4{
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.mp-grid--3{
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.mp-card{
+  background: #fffdf9;
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.mp-card__title{
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.mp-card__price{
+  font-weight: 700;
+  font-size: 20px;
+  color: #c5322d;
+}
+
+.mp-card__note{
+  margin-top: 6px;
+  font-size: 13px;
+  color: #555;
+}
+
+.mp-tax{
+  font-size: 0.9em;
+  color: #666;
+}
+
+.mp-panel{
+  background: #fff;
+  border-radius: 16px;
+  padding: 18px 18px 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.mp-panel__title{
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.mp-subtitle{
+  font-size: 13px;
+  color: #666;
+  margin: -4px 0 10px;
+}
+
+.mp-list{
+  display: grid;
+  gap: 8px;
+}
+
+.mp-item{
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.mp-hr{
+  border: 0;
+  border-top: 1px solid #eee;
+  margin: 12px 0;
+}
+
+.mp-badge{
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  color: #c5322d;
+  border: 1px solid rgba(197,50,45,0.35);
+  background: rgba(197,50,45,0.06);
+}
+
+.mp-note{
+  text-align: center;
+  margin-top: 18px;
+  color: #666;
+  font-size: 13px;
+}
+
+/* responsive */
+@media (max-width: 900px){
+  .mp-grid--feature{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .mp-grid--4{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .mp-grid--3{ grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px){
+  .page-title{ font-size: 26px; }
+  .mp-grid--feature{ grid-template-columns: 1fr; }
+}
+
+/* ===== drink page ===== */
+
+.page-hero{
+  padding-top: calc(var(--header-h) + 28px);
+  padding-bottom: 24px;
+  background: #faf7f4;
+}
+
+.page-title{
+  font-size: 32px;
+  letter-spacing: 0.08em;
+  text-align: center;
+  margin: 0 0 8px;
+}
+
+.page-lead{
+  text-align: center;
+  margin: 0;
+  color: #666;
+}
+
+.drinkcat-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.drinkcat-card{
+  background: #fff;
+  border-radius: 16px;
+  padding: 18px 18px 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.drinkcat-title{
+  font-size: 18px;
+  margin-bottom: 10px;
+  letter-spacing: 0.06em;
+}
+
+.drinkcat-list{
+  display: grid;
+  gap: 8px;
+}
+
+.drinkcat-list li{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: baseline;
+  padding-bottom: 6px;
+  border-bottom: 1px dashed #eee;
+  font-size: 14px;
+  color: #444;
+}
+
+.drinkcat-list .price{
+  font-weight: 700;
+  color: #c5322d;
+  white-space: nowrap;
+}
+
+.drinkcat-note{
+  margin: 10px 0 0;
+  font-size: 12px;
+  color: #777;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px){
+  .drinkcat-grid{ grid-template-columns: 1fr; }
+  .page-title{ font-size: 26px; }
+}
+
+/* ===== more link (TOP only) ===== */
+.more-link{
+  margin-top: 32px;
+  text-align: center;
+}
+
+/* ===== btn-more（btn-secondary と同じ見た目） ===== */
+.btn-more{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 10px 24px;
+  border: 1px solid #c5322d;
+  border-radius: 999px;
+
+  color: #c5322d;
+  background: #fff;
+  text-decoration: none;
+  font-weight: 500;
+
+  transition: all .2s ease;
+}
+
+.btn-more:hover{
+  background: #c5322d;
+  color: #fff;
+}
+
+/* ===== btn-more force override (put at VERY bottom) ===== */
+a.btn-more{
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+
+  padding: 10px 24px !important;
+  border: 1px solid #c5322d !important;
+  border-radius: 999px !important;
+
+  color: #c5322d !important;
+  background: #fff !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+
+  transition: all .2s ease !important;
+}
+
+a.btn-more:hover{
+  background: #c5322d !important;
+  color: #fff !important;
+}
+
+/* === FIX: more-link center alignment === */
+.more-link{
+  display: flex;
+  justify-content: center;
+}

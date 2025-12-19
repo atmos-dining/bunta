@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ドリンク｜大衆焼肉ぶんた</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="大衆焼肉ぶんたのドリンクメニュー。ハイボール、サワー、焼酎、ビール、ソフトドリンクまで多数ご用意。">
+
+  <!-- Google Fonts: Noto Serif JP -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <!-- ヘッダー -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <a href="./index.html" class="site-logo">【公式】大衆焼肉ぶんた</a>
+        <div class="site-tagline">西新駅徒歩5分の大衆焼肉</div>
+      </div>
+
+      <div class="header-right">
+        <div class="header-tel header-only-desktop">
+          <span class="tel-label">ご予約・お問い合わせ</span>
+          <a href="tel:0924071179" class="tel-number">092-407-1179</a>
+        </div>
+
+        <a href="https://yoyaku.toreta.in/bunta"
+           target="_blank" rel="noopener"
+           class="btn-primary header-reserve header-only-desktop">
+          ネット予約はこちら
+        </a>
+
+        <!-- スマホ用：三本線 -->
+        <button class="nav-toggle" type="button" aria-label="メニューを開く" aria-expanded="false">
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- PC用ナビ -->
+    <nav class="global-nav header-only-desktop">
+      <ul>
+        <li><a href="./index.html">トップ</a></li>
+        <li><a href="./index.html#concept">ぶんたのこだわり</a></li>
+        <li><a href="./course.html">ご宴会コース</a></li>
+        <li><a href="./menu.html">お料理</a></li>
+        <li><a href="./drink.html">ドリンク</a></li>
+        <li><a href="./index.html#space">店内・空間</a></li>
+        <li><a href="./index.html#access">アクセス</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- スマホ用：右から出るドロワー -->
+  <div class="drawer-overlay" data-close="drawer" aria-hidden="true"></div>
+
+  <aside class="drawer" id="drawerMenu" aria-label="スマホメニュー" aria-hidden="true">
+    <button class="drawer-close" type="button" aria-label="メニューを閉じる" data-close="drawer">×</button>
+    <nav>
+      <ul>
+        <li><a href="./index.html">トップ</a></li>
+        <li><a href="./index.html#concept">ぶんたのこだわり</a></li>
+        <li><a href="./course.html">ご宴会コース</a></li>
+        <li><a href="./menu.html">お料理</a></li>
+        <li><a href="./drink.html">ドリンク</a></li>
+        <li><a href="./index.html#space">店内・空間</a></li>
+        <li><a href="./index.html#access">アクセス</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- メイン -->
+  <main id="top">
+
+    <!-- ページ見出し（固定ヘッダー対策でpaddingあり） -->
+    <section class="page-hero">
+      <div class="section-inner">
+        <h1 class="page-title">ドリンク</h1>
+        <p class="page-lead">ハイボール、サワー、焼酎、ビール、ソフトドリンクまで。焼肉に合う一杯をどうぞ。</p>
+      </div>
+    </section>
+
+    <!-- ドリンク一覧 -->
+    <section class="section drink-page">
+      <div class="section-inner">
+
+        <div class="drinkcat-grid">
+
+          <!-- ハイボール -->
+          <article class="drinkcat-card">
+            <h2 class="drinkcat-title">ハイボール</h2>
+            <ul class="drinkcat-list">
+              <li><span>ジムビームハイボール</span><span class="price">450（495）</span></li>
+              <li><span>角ハイボール</span><span class="price">490（539）</span></li>
+              <li><span>コークハイボール</span><span class="price">490（539）</span></li>
+              <li><span>ジンジャーハイボール</span><span class="price">490（539）</span></li>
+              <li><span>柚子ハイボール</span><span class="price">490（539）</span></li>
+              <li><span>ピンクグレープフルーツハイボール</span><span class="price">490（539）</span></li>
+              <li><span>パインハイボール</span><span class="price">490（539）</span></li>
+            </ul>
+            <p class="drinkcat-note">※メガサイズ：各 890（979）</p>
+          </article>
+
+          <!-- レモンサワー -->
+          <article class="drinkcat-card">
+            <h2 class="drinkcat-title">レモンサワー</h2>
+            <ul class="drinkcat-list">
+              <li><span>パンチレモンサワー</span><span class="price">490（539）</span></li>
+              <li><span>自家製レモネードサワー</span><span class="price">490（539）</span></li>
+              <li><span>はちみつ仕込みレモンサワー</span><span class="price">490（539）</span></li>
+              <li><span>ソルティー＆レモンサワー</span><span class="price">490（539）</span></li>
+              <li><span>こだわり酒場のレモンサワー</span><span class="price">450（495）</span></li>
+            </ul>
+            <p class="drinkcat-note">※メガサイズ：各 790（869）</p>
+          </article>
+
+          <!-- 最強酎ハイ -->
+          <article class="drinkcat-card">
+            <h2 class="drinkcat-title">最強酎ハイ</h2>
+            <ul class="drinkcat-list">
+              <li><span>最強レモンサワー</span><span class="price">550（605）</span></li>
+              <li><span>最強パインサワー</span><span class="price">550（605）</span></li>
+              <li><span>最強MIXサワー</span><span class="price">550（605）</span></li>
+              <li><span>おかわり</span><span class="price">290（319）</span></li>
+            </ul>
+          </article>
+
+          <!-- 酎ハイ -->
+          <article class="drinkcat-card">
+            <h2 class="drinkcat-title">酎ハイ</h2>
+            <ul class="drinkcat-list">
+              <li><span>タコハイ</span><span class="price">490（539）</span></li>
+              <li><span>ウーロン</span><span class="price">490（539）</span></li>
+              <li><span>カルピス</span><span class="price">490（539）</span></li>
+              <li><span>ライム</span><span class="price">490（539）</span></li>
+              <li><span>柚子</span><span class="price">490（539）</span></li>
+              <li><span>パイン</span><span class="price">490（539）</span></li>
+              <li><span>ピンクグレープフルーツ</span><span class="price">490（539）</span></li>
+              <li><span>翠ジンソーダ</span><span class="price">490（539）</span></li>
+            </ul>
+            <p class="drinkcat-note">※メガサイズ：各 790（869）</p>
+          </article>
+
+          <!-- ビール -->
+          <article class="drinkcat-card">
+            <h2 class="drinkcat-title">ビール</h2>
+            <ul class="drinkcat-list">
+              <li><span>サントリー生ビール（中）</span><span class="price">590（649）</span></li>
+              <li><span>サントリー生ビール（メガ）</span><span class="price">990（1,089）</span></li>
+              <li><span>瓶ビール</span><span class="price">690（759）</span></li>
+              <li><span>オールフリー</span><span class="price">490（539）</span></li>
+            </ul>
+            <p class="drinkcat-note">※瓶ビール例：スーパードライ／一番搾り／プレモル／サッポロ黒ラベル</p>
+          </article>
+
+          <!-- マッコリ -->
+          <article class="drinkcat-card">
+            <h2 class="drinkcat-title">マッコリ</h2>
+            <ul class="drinkcat-list">
+              <li><span>ソウルマッコリ（グラス）</span><span class="price">450（495）</span></li>
+              <li><span>ソウルマッコリ（900ml）</span><span class="price">1,290（1,419）</span></li>
+            </ul>
+          </article>
+
+          <!-- 焼酎 -->
+          <article class="drinkcat-card">
+            <h2 class="drinkcat-title">焼酎</h2>
+            <ul class="drinkcat-list">
+              <li><span>JJ（ジャスミン焼酎）</span><span class="price">490（539）</span></li>
+              <li><span>黒霧島（芋）</span><span class="price">390（429）</span></li>
+              <li><span>島美人（芋）</span><span class="price">390（429）</span></li>
+              <li><span>誘う（芋）</span><span class="price">390（429）</span></li>
+              <li><span>二階堂（麦）</span><span class="price">390（429）</span></li>
+              <li><span>白岳（米）</span><span class="price">390（429）</span></li>
+              <li><span>DAIYAME（だいやめ）</span><span class="price">490（539）</span></li>
+            </ul>
+            <p class="drinkcat-note">
+              ※ボトル：各 1,700（1,870）／DAIYAME ボトル：2,200（2,420）<br>
+              ※ボトルセット：お一人様 110円
+            </p>
+          </article>
+
+          <!-- カクテル -->
+          <article class="drinkcat-card">
+            <h2 class="drinkcat-title">カクテル</h2>
+            <ul class="drinkcat-list">
+              <li><span>カシス（オレンジ／ウーロン／ミルク／ソーダ）</span><span class="price">490（539）</span></li>
+              <li><span>ピーチ（オレンジ／ウーロン／ソーダ）</span><span class="price">490（539）</span></li>
+              <li><span>ジン（トニック／ジンジャー）</span><span class="price">490（539）</span></li>
+            </ul>
+          </article>
+
+          <!-- ノンアル -->
+          <article class="drinkcat-card">
+            <h2 class="drinkcat-title">ノンアル</h2>
+            <ul class="drinkcat-list">
+              <li><span>アップルジンジャー</span><span class="price">390（429）</span></li>
+              <li><span>キンキンレモン</span><span class="price">390（429）</span></li>
+              <li><span>パイン</span><span class="price">390（429）</span></li>
+              <li><span>MIXフルーツ</span><span class="price">390（429）</span></li>
+              <li><span>ミルミル</span><span class="price">390（429）</span></li>
+            </ul>
+          </article>
+
+          <!-- 梅酒・果実酒 -->
+          <article class="drinkcat-card">
+            <h2 class="drinkcat-title">梅酒・果実酒</h2>
+            <ul class="drinkcat-list">
+              <li><span>青梅梅酒</span><span class="price">490（539）</span></li>
+              <li><span>あらごしみかん酒</span><span class="price">550（605）</span></li>
+            </ul>
+          </article>
+
+          <!-- ソフトドリンク -->
+          <article class="drinkcat-card">
+            <h2 class="drinkcat-title">ソフトドリンク</h2>
+            <ul class="drinkcat-list">
+              <li><span>ウーロン／オレンジ／コーラ／カルピス／ラムネ／アップル</span><span class="price">300（330）</span></li>
+              <li><span>ジンジャーエール／ヨーグルト</span><span class="price">300（330）</span></li>
+              <li><span>黒ウーロン茶／ジャスミン茶</span><span class="price">350（385）</span></li>
+            </ul>
+            <p class="drinkcat-note">※価格は（税別／税込）表記です。</p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 共通下部を差し込む場所 -->
+    <div id="shared-bottom"></div>
+
+    <!-- 右下固定：ページトップ（全ページ共通でOK） -->
+    <a href="#top" class="page-top" aria-label="ページの先頭へ戻る">＾</a>
+
+  </main>
+
+  <script>
+    // --- ドロワー ---
+    const btn = document.querySelector('.nav-toggle');
+    const drawer = document.querySelector('#drawerMenu');
+    const overlay = document.querySelector('.drawer-overlay');
+
+    function openDrawer() {
+      drawer.classList.add('is-open');
+      overlay.classList.add('is-open');
+      btn.setAttribute('aria-expanded', 'true');
+      drawer.setAttribute('aria-hidden', 'false');
+      overlay.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeDrawer() {
+      drawer.classList.remove('is-open');
+      overlay.classList.remove('is-open');
+      btn.setAttribute('aria-expanded', 'false');
+      drawer.setAttribute('aria-hidden', 'true');
+      overlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    btn?.addEventListener('click', () => {
+      drawer.classList.contains('is-open') ? closeDrawer() : openDrawer();
+    });
+
+    document.querySelectorAll('[data-close="drawer"]').forEach(el => {
+      el.addEventListener('click', closeDrawer);
+    });
+    drawer?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeDrawer();
+    });
+
+    // --- ページトップボタン：一定スクロールで表示 ---
+    const pageTop = document.querySelector('.page-top');
+    function togglePageTop(){
+      if(!pageTop) return;
+      const y = window.scrollY || document.documentElement.scrollTop;
+      if (y > 480) pageTop.classList.add('is-show');
+      else pageTop.classList.remove('is-show');
+    }
+    window.addEventListener('scroll', togglePageTop, { passive: true });
+    togglePageTop();
+
+    // --- セクション：スクロールで下からシュッ ---
+    const sections = document.querySelectorAll('.section');
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-inview');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      threshold: 0.12,
+      rootMargin: '0px 0px -10% 0px'
+    });
+
+    sections.forEach(sec => io.observe(sec));
+
+    // --- 共通下部（予約〜フッター）を読み込む：差し込み後の.sectionも監視に追加 ---
+    fetch('./partials/bottom.html')
+      .then(r => r.text())
+      .then(html => {
+        const mount = document.querySelector('#shared-bottom');
+        if (!mount) return;
+
+        mount.innerHTML = html;
+
+        // ★ここが“一発で出す”ポイント
+        const newSections = mount.querySelectorAll('.section');
+        newSections.forEach(sec => io.observe(sec));
+      });
+  </script>
+
+</body>
+</html>

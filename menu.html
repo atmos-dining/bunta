@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>お料理｜大衆焼肉ぶんた</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="大衆焼肉ぶんたのお料理ページ。名物メニューから鶏・豚・牛・ホルモン、キムチ、刺し、ごはん・スープ・麺、焼き野菜、甘いもんまで。">
+
+  <!-- Google Fonts: Noto Serif JP（いつもの） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <!-- ヘッダー -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <!-- サブページではロゴでTOPへ -->
+        <a href="./index.html" class="site-logo">【公式】大衆焼肉ぶんた</a>
+        <div class="site-tagline">西新駅徒歩5分の大衆焼肉</div>
+      </div>
+
+      <div class="header-right">
+        <div class="header-tel header-only-desktop">
+          <span class="tel-label">ご予約・お問い合わせ</span>
+          <a href="tel:0924071179" class="tel-number">092-407-1179</a>
+        </div>
+
+        <a href="https://yoyaku.toreta.in/bunta"
+           target="_blank" rel="noopener"
+           class="btn-primary header-reserve header-only-desktop">
+          ネット予約はこちら
+        </a>
+
+        <!-- スマホ用：三本線 -->
+        <button class="nav-toggle" type="button" aria-label="メニューを開く" aria-expanded="false">
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- PC用ナビ -->
+    <nav class="global-nav header-only-desktop">
+      <ul>
+        <li><a href="./index.html">トップ</a></li>
+        <li><a href="./index.html#concept">ぶんたのこだわり</a></li>
+        <li><a href="./course.html">ご宴会コース</a></li>
+        <li><a href="./menu.html" aria-current="page">お料理</a></li>
+        <li><a href="./drink.html">ドリンク</a></li>
+        <li><a href="./index.html#space">店内・空間</a></li>
+        <li><a href="./index.html#access">アクセス</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- スマホ用：右から出るメニュー -->
+  <div class="drawer-overlay" data-close="drawer" aria-hidden="true"></div>
+
+  <aside class="drawer" id="drawerMenu" aria-label="スマホメニュー" aria-hidden="true">
+    <button class="drawer-close" type="button" aria-label="メニューを閉じる" data-close="drawer">×</button>
+    <nav>
+      <ul>
+        <li><a href="./index.html">トップ</a></li>
+        <li><a href="./index.html#concept">ぶんたのこだわり</a></li>
+        <li><a href="./course.html">ご宴会コース</a></li>
+        <li><a href="./menu.html" aria-current="page">お料理</a></li>
+        <li><a href="./drink.html">ドリンク</a></li>
+        <li><a href="./index.html#space">店内・空間</a></li>
+        <li><a href="./index.html#access">アクセス</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- メイン -->
+  <main id="top">
+
+    <!-- ページ見出し -->
+    <section class="section page-head">
+      <div class="section-inner">
+        <h1 class="page-title">お料理</h1>
+        <p class="page-lead">ぶんた名物から定番焼肉、サイドメニューまで。価格は「税抜（括弧内は税込）」です。</p>
+      </div>
+    </section>
+
+    <!-- ぶんた名物メニュー -->
+    <section class="section menu-page">
+      <div class="section-inner">
+
+        <h2 class="section-title">ぶんた名物メニュー</h2>
+
+        <div class="mp-grid mp-grid--feature">
+          <div class="mp-card">
+            <div class="mp-card__title">ネギ盛りPタン</div>
+            <div class="mp-card__price">590 <span class="mp-tax">(649)</span></div>
+            <div class="mp-card__note">替え玉Pタン：390 <span class="mp-tax">(429)</span></div>
+          </div>
+
+          <div class="mp-card">
+            <div class="mp-card__title">青唐せせり</div>
+            <div class="mp-card__price">550 <span class="mp-tax">(605)</span></div>
+          </div>
+
+          <div class="mp-card">
+            <div class="mp-card__title">辛ぇテツ</div>
+            <div class="mp-card__price">590 <span class="mp-tax">(649)</span></div>
+          </div>
+
+          <div class="mp-card">
+            <div class="mp-card__title">たれ漬けメガカルビ</div>
+            <div class="mp-card__price">1,290 <span class="mp-tax">(1,419)</span></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 焼肉：鶏・豚・牛・ホルモン -->
+    <section class="section menu-page menu-page--meat">
+      <div class="section-inner">
+
+        <h2 class="section-title">焼肉</h2>
+        <p class="section-lead">鶏・豚・牛・ホルモン</p>
+
+        <div class="mp-grid mp-grid--4">
+
+          <!-- 鶏 -->
+          <article class="mp-panel">
+            <h3 class="mp-panel__title">鶏</h3>
+            <ul class="mp-list">
+              <li class="mp-item"><span>秘伝の皮</span><span>390 <span class="mp-tax">(429)</span></span></li>
+              <li class="mp-item"><span>鶏もも</span><span>390 <span class="mp-tax">(429)</span></span></li>
+              <li class="mp-item"><span>砂ズリ</span><span>490 <span class="mp-tax">(539)</span></span></li>
+              <li class="mp-item"><span>ジューシーせせり</span><span>490 <span class="mp-tax">(539)</span></span></li>
+              <li class="mp-item"><span>ヤゲンナンコツ</span><span>490 <span class="mp-tax">(539)</span></span></li>
+            </ul>
+          </article>
+
+          <!-- 豚 -->
+          <article class="mp-panel">
+            <h3 class="mp-panel__title">豚</h3>
+            <ul class="mp-list">
+              <li class="mp-item"><span>豚ノドナンコツ</span><span>490 <span class="mp-tax">(539)</span></span></li>
+              <li class="mp-item"><span>薄切り豚バラ</span><span>490 <span class="mp-tax">(539)</span></span></li>
+              <li class="mp-item"><span>粗挽きウインナー</span><span>490 <span class="mp-tax">(539)</span></span></li>
+              <li class="mp-item"><span>トントロ</span><span>590 <span class="mp-tax">(649)</span></span></li>
+            </ul>
+          </article>
+
+          <!-- 牛 -->
+          <article class="mp-panel">
+            <h3 class="mp-panel__title">牛</h3>
+            <ul class="mp-list">
+              <li class="mp-item"><span>中落ちカルビ</span><span>790 <span class="mp-tax">(869)</span></span></li>
+              <li class="mp-item"><span>牛サガリ</span><span>890 <span class="mp-tax">(979)</span></span></li>
+              <li class="mp-item"><span>上ロース</span><span>890 <span class="mp-tax">(979)</span></span></li>
+              <li class="mp-item"><span>並カルビ</span><span>890 <span class="mp-tax">(979)</span></span></li>
+              <li class="mp-item"><span>牛タン</span><span>990 <span class="mp-tax">(1,089)</span></span></li>
+              <li class="mp-item"><span>上カルビ</span><span>1,290 <span class="mp-tax">(1,419)</span></span></li>
+              <li class="mp-item"><span>上ハラミ</span><span>1,290 <span class="mp-tax">(1,419)</span></span></li>
+            </ul>
+          </article>
+
+          <!-- ホルモン -->
+          <article class="mp-panel">
+            <h3 class="mp-panel__title">ホルモン</h3>
+            <ul class="mp-list">
+              <li class="mp-item"><span>てっちゃん</span><span>590 <span class="mp-tax">(649)</span></span></li>
+              <li class="mp-item"><span>黒せんまい</span><span>590 <span class="mp-tax">(649)</span></span></li>
+              <li class="mp-item"><span>牛ハツ</span><span>690 <span class="mp-tax">(759)</span></span></li>
+              <li class="mp-item"><span>上ミノ</span><span>890 <span class="mp-tax">(979)</span></span></li>
+              <li class="mp-item"><span>極上丸腸</span><span>890 <span class="mp-tax">(979)</span></span></li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- キムチ・野菜 / 刺し / 一品 / ごはん・スープ・麺 / 焼き野菜 / 甘いもん -->
+    <section class="section menu-page menu-page--side">
+      <div class="section-inner">
+
+        <h2 class="section-title">サイドメニュー</h2>
+
+        <div class="mp-grid mp-grid--3">
+
+          <!-- キムチ・野菜 -->
+          <article class="mp-panel">
+            <h3 class="mp-panel__title">キムチ・野菜</h3>
+            <div class="mp-subtitle">【自家製キムチ】</div>
+            <ul class="mp-list">
+              <li class="mp-item"><span>キムチ3種盛り</span><span>590 <span class="mp-tax">(649)</span></span></li>
+              <li class="mp-item"><span>白菜キムチ</span><span>390 <span class="mp-tax">(429)</span></span></li>
+              <li class="mp-item"><span>大根キムチ</span><span>390 <span class="mp-tax">(429)</span></span></li>
+              <li class="mp-item"><span>オイキムチ</span><span>390 <span class="mp-tax">(429)</span></span></li>
+            </ul>
+            <hr class="mp-hr">
+            <ul class="mp-list">
+              <li class="mp-item"><span>つつみ菜</span><span>390 <span class="mp-tax">(429)</span></span></li>
+              <li class="mp-item"><span>ポテトサラダ</span><span>490 <span class="mp-tax">(539)</span></span></li>
+              <li class="mp-item"><span>チョレギサラダ</span><span>490 <span class="mp-tax">(539)</span></span></li>
+            </ul>
+          </article>
+
+          <!-- 刺し -->
+          <article class="mp-panel">
+            <h3 class="mp-panel__title">刺し</h3>
+            <ul class="mp-list">
+              <li class="mp-item"><span>せんまい刺し</span><span>690 <span class="mp-tax">(759)</span></span></li>
+              <li class="mp-item"><span>桜ユッケ</span><span>990 <span class="mp-tax">(1,089)</span></span></li>
+            </ul>
+          </article>
+
+          <!-- 一品 -->
+          <article class="mp-panel">
+            <h3 class="mp-panel__title">一品</h3>
+            <ul class="mp-list">
+              <li class="mp-item"><span>ピリ辛もやしナムル</span><span>390 <span class="mp-tax">(429)</span></span></li>
+              <li class="mp-item"><span>焼いても枝豆</span><span>390 <span class="mp-tax">(429)</span></span></li>
+              <li class="mp-item"><span>肉味噌きゅーり</span><span>390 <span class="mp-tax">(429)</span></span></li>
+              <li class="mp-item"><span>タン酢もつ</span><span>490 <span class="mp-tax">(539)</span></span></li>
+              <li class="mp-item"><span>牛すじポン酢</span><span>490 <span class="mp-tax">(539)</span></span></li>
+              <li class="mp-item"><span>丸ニンニクぐつぐつ</span><span>490 <span class="mp-tax">(539)</span></span></li>
+            </ul>
+          </article>
+
+          <!-- ごはん・スープ・麺 -->
+          <article class="mp-panel">
+            <h3 class="mp-panel__title">ごはん・スープ・麺</h3>
+
+            <ul class="mp-list">
+              <li class="mp-item"><span>玉子スープ</span><span>390 <span class="mp-tax">(429)</span></span></li>
+              <li class="mp-item"><span>わかめスープ</span><span>390 <span class="mp-tax">(429)</span></span></li>
+              <li class="mp-item"><span>ミックススープ（玉子とわかめ）</span><span>490 <span class="mp-tax">(539)</span></span></li>
+            </ul>
+
+            <hr class="mp-hr">
+
+            <div class="mp-subtitle">【ごはん】</div>
+            <ul class="mp-list">
+              <li class="mp-item"><span>小盛</span><span>200 <span class="mp-tax">(220)</span></span></li>
+              <li class="mp-item"><span>中盛</span><span>300 <span class="mp-tax">(300)</span></span></li>
+              <li class="mp-item"><span>大盛</span><span>350 <span class="mp-tax">(385)</span></span></li>
+              <li class="mp-item"><span>チョモランマ盛</span><span>500 <span class="mp-tax">(550)</span></span></li>
+            </ul>
+
+            <ul class="mp-list" style="margin-top:10px;">
+              <li class="mp-item"><span>石焼ビビンバ <span class="mp-badge">チーズ+100円</span></span><span>690 <span class="mp-tax">(759)</span></span></li>
+              <li class="mp-item"><span>ぐつぐつクッパ</span><span>690 <span class="mp-tax">(759)</span></span></li>
+              <li class="mp-item"><span>韓国冷麺</span><span>790 <span class="mp-tax">(869)</span></span></li>
+            </ul>
+          </article>
+
+          <!-- 焼き野菜 -->
+          <article class="mp-panel">
+            <h3 class="mp-panel__title">焼き野菜</h3>
+            <ul class="mp-list">
+              <li class="mp-item"><span>キャベツ</span><span>各290 <span class="mp-tax">(319)</span></span></li>
+              <li class="mp-item"><span>エリンギ</span><span>各290 <span class="mp-tax">(319)</span></span></li>
+              <li class="mp-item"><span>なすび</span><span>各290 <span class="mp-tax">(319)</span></span></li>
+              <li class="mp-item"><span>ピーマン</span><span>各290 <span class="mp-tax">(319)</span></span></li>
+              <li class="mp-item"><span>玉ねぎ</span><span>各290 <span class="mp-tax">(319)</span></span></li>
+              <li class="mp-item"><span>かぼちゃ</span><span>各290 <span class="mp-tax">(319)</span></span></li>
+              <li class="mp-item"><span>トウモロコシ</span><span>各290 <span class="mp-tax">(319)</span></span></li>
+            </ul>
+
+            <hr class="mp-hr">
+
+            <ul class="mp-list">
+              <li class="mp-item"><span>焼き野菜盛り</span><span>490 <span class="mp-tax">(539)</span></span></li>
+            </ul>
+          </article>
+
+          <!-- 甘いもん -->
+          <article class="mp-panel">
+            <h3 class="mp-panel__title">甘いもん</h3>
+            <ul class="mp-list">
+              <li class="mp-item"><span>バニラ</span><span>290 <span class="mp-tax">(319)</span></span></li>
+              <li class="mp-item"><span>黒ごま</span><span>290 <span class="mp-tax">(319)</span></span></li>
+            </ul>
+          </article>
+
+        </div>
+
+        <p class="mp-note">
+          価格は全て「税抜（括弧内は税込）」表記です。<br>
+          お通し代としてお一人様 330円（税込）頂いてます。
+        </p>
+
+      </div>
+    </section>
+
+    <!-- 共通下部を差し込む場所（予約〜アクセス〜フッター） -->
+    <div id="shared-bottom"></div>
+
+    <!-- ページトップボタン（右下固定：全ページ共通） -->
+    <a href="#top" class="page-top" aria-label="ページの先頭へ戻る">＾</a>
+
+  </main>
+
+  <script>
+    // Drawer
+    const btn = document.querySelector('.nav-toggle');
+    const drawer = document.querySelector('#drawerMenu');
+    const overlay = document.querySelector('.drawer-overlay');
+
+    function openDrawer() {
+      drawer.classList.add('is-open');
+      overlay.classList.add('is-open');
+      btn.setAttribute('aria-expanded', 'true');
+      drawer.setAttribute('aria-hidden', 'false');
+      overlay.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeDrawer() {
+      drawer.classList.remove('is-open');
+      overlay.classList.remove('is-open');
+      btn.setAttribute('aria-expanded', 'false');
+      drawer.setAttribute('aria-hidden', 'true');
+      overlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    btn?.addEventListener('click', () => {
+      drawer.classList.contains('is-open') ? closeDrawer() : openDrawer();
+    });
+
+    document.querySelectorAll('[data-close="drawer"]').forEach(el => {
+      el.addEventListener('click', closeDrawer);
+    });
+
+    drawer?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeDrawer();
+    });
+
+    // ページトップボタン：一定スクロールで表示
+    const pageTop = document.querySelector('.page-top');
+    function togglePageTop(){
+      if(!pageTop) return;
+      const y = window.scrollY || document.documentElement.scrollTop;
+      if (y > 480) pageTop.classList.add('is-show');
+      else pageTop.classList.remove('is-show');
+    }
+    window.addEventListener('scroll', togglePageTop, { passive: true });
+    togglePageTop();
+
+    // セクション：スクロールで下からシュッと表示（使ってるなら）
+    const sections = document.querySelectorAll('.section');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-inview');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      threshold: 0.12,
+      rootMargin: '0px 0px -10% 0px'
+    });
+    sections.forEach(sec => io.observe(sec));
+
+    // 共通下部（予約〜フッター）を読み込む
+    fetch('./partials/bottom.html')
+    .then(r => r.text())
+    .then(html => {
+        const mount = document.querySelector('#shared-bottom');
+        if (!mount) return;
+
+        mount.innerHTML = html;
+
+        // ★追加：差し込まれた .section もアニメ監視に追加
+        const newSections = mount.querySelectorAll('.section');
+        newSections.forEach(sec => io.observe(sec));
+
+        // もし「差し込んだ瞬間に即表示したい」なら、下の1行もONにする
+        // newSections.forEach(sec => sec.classList.add('is-inview'));
+    });
+
+
+  </script>
+
+</body>
+</html>
