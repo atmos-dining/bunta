@@ -40,14 +40,20 @@
       <div class="header-right">
         <div class="header-tel header-only-desktop">
           <span class="tel-label">ご予約・お問い合わせ</span>
-          <a href="tel:0924071179" class="tel-number">092-407-1179</a>
+          <a href="tel:0924071179" class="tel-number"
+            onclick="gtag('event','click_tel', {event_label:'header_tel'});">
+            092-407-1179
+          </a>
+
         </div>
 
         <a href="https://yoyaku.toreta.in/bunta"
-           target="_blank" rel="noopener"
-           class="btn-primary header-reserve header-only-desktop">
+          target="_blank" rel="noopener"
+          class="btn-primary header-reserve header-only-desktop"
+          onclick="gtag('event','click_reserve', {event_label:'header_reserve'});">
           ネット予約はこちら
         </a>
+
 
         <!-- スマホ用：三本線 -->
         <button class="nav-toggle" type="button" aria-label="メニューを開く" aria-expanded="false">
@@ -109,10 +115,16 @@
           気取らずワイワイ楽しめる、大衆焼肉「ぶんた」へようこそ。
         </p>
         <div class="hero-actions">
-          <a href="tel:0924071179" class="btn-secondary">電話で予約する</a>
-          <a href="https://yoyaku.toreta.in/bunta" target="_blank" rel="noopener" class="btn-primary">
+          <a href="tel:0924071179" class="btn-secondary"
+            onclick="gtag('event','click_tel', {event_label:'hero_tel'});">
+            電話で予約する
+          </a>
+
+          <a href="https://yoyaku.toreta.in/bunta" target="_blank" rel="noopener" class="btn-primary"
+            onclick="gtag('event','click_reserve', {event_label:'hero_reserve'});">
             ネット予約はこちら
           </a>
+
         </div>
       </div>
 
