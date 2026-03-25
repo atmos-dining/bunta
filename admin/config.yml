@@ -1,0 +1,28 @@
+backend:
+  name: github
+  repo: atmos-dining/bunta
+  branch: main
+  base_url: https://sveltia-cms-auth.atmos-nextgen-team.workers.dev
+
+media_folder: images
+public_folder: /images
+
+collections:
+  - name: blog
+    label: Blog Posts
+    files:
+      - name: posts
+        label: All Posts
+        file: blog/posts.json
+        fields:
+          - name: posts
+            label: Posts
+            widget: list
+            fields:
+              - {name: slug,    label: Slug,    widget: string}
+              - {name: title,   label: Title,   widget: string}
+              - {name: date,    label: Date,    widget: datetime, format: "YYYY-MM-DD", time_format: false}
+              - {name: excerpt, label: Excerpt, widget: text}
+              - {name: image,   label: Image,   widget: image,    required: false}
+              - {name: tags,    label: Tags,    widget: list}
+              - {name: body,    label: Body,    widget: markdown}

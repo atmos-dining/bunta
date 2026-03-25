@@ -1,0 +1,58 @@
+{
+  "posts": [
+    {
+      "title": "【お知らせ】公式ブログを開設しました",
+      "date": "2026-01-15",
+      "slug": "2026-01-15-blog-open",
+      "image": "./images/blog-open.jpg",
+      "excerpt": "大衆焼肉ぶんた公式ブログを開設しました。営業情報やおすすめ情報を発信していきます。",
+      "tags": ["お知らせ"],
+      "body": ""
+    },
+    {
+      "title": "初めての方へ｜ぶんたの楽しみ方",
+      "date": "2026-01-12",
+      "slug": "2026-01-12-how-to-enjoy",
+      "image": "./images/how-to-enjoy.jpg",
+      "excerpt": "初めてご来店される方へ。大衆焼肉ぶんたのおすすめポイントをご紹介します。",
+      "tags": ["ブログ"],
+      "body": ""
+    },
+    {
+      "title": "混雑しやすい時間帯のご案内",
+      "date": "2026-01-10",
+      "slug": "2026-01-10-busy-time",
+      "image": "./images/busy-time.jpg",
+      "excerpt": "週末や祝日の混雑時間帯についてのご案内です。",
+      "tags": ["お知らせ"],
+      "body": ""
+    },
+    {
+      "title": "ぶんた名物「壺漬けメガカルビ」",
+      "date": "2026-01-08",
+      "slug": "2026-01-08-special-menu",
+      "image": "./images/mega-karubi.jpg",
+      "excerpt": "大衆焼肉ぶんた名物、壺漬けメガカルビのご紹介です。",
+      "tags": ["ブログ"],
+      "body": ""
+    },
+    {
+      "title": "お一人様・少人数でのご利用について",
+      "date": "2026-01-05",
+      "slug": "2026-01-05-solo",
+      "image": "./images/solo.jpg",
+      "excerpt": "お一人様や少人数でも気軽にご利用いただけます。",
+      "tags": ["ブログ"],
+      "body": ""
+    },
+    {
+      "title": "安心してご来店いただくために",
+      "date": "2026-01-03",
+      "slug": "2026-01-03-safety",
+      "image": "./images/safety.jpg",
+      "excerpt": "安心してお食事いただくための取り組みについてご紹介します。",
+      "tags": ["お知らせ"],
+      "body": ""
+    }
+  ]
+}

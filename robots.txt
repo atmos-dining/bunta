@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://atmos-dining.github.io/bunta/sitemap.xml
