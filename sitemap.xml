@@ -1,33 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- トップページ -->
   <url>
     <loc>https://yakiniku-bunta.com/</loc>
     <lastmod>2026-04-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>https://yakiniku-bunta.com/menu.html</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://yakiniku-bunta.com/drink.html</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
+  <!-- ご宴会コース -->
   <url>
     <loc>https://yakiniku-bunta.com/course.html</loc>
     <lastmod>2026-04-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- お料理 -->
+  <url>
+    <loc>https://yakiniku-bunta.com/menu.html</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ドリンク -->
+  <url>
+    <loc>https://yakiniku-bunta.com/drink.html</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ブログ一覧 -->
   <url>
     <loc>https://yakiniku-bunta.com/blog/</loc>
     <lastmod>2026-04-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- ブログ記事：【お知らせ】公式ブログを開設しました -->
+  <url>
+    <loc>https://yakiniku-bunta.com/blog/posts/post.html?slug=2026-01-15-blog-open</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- ブログ記事：初めての方へ｜ぶんたの楽しみ方 -->
+  <url>
+    <loc>https://yakiniku-bunta.com/blog/posts/post.html?slug=2026-01-12-how-to-enjoy</loc>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- ブログ記事：混雑しやすい時間帯のご案内 -->
+  <url>
+    <loc>https://yakiniku-bunta.com/blog/posts/post.html?slug=2026-01-10-busy-time</loc>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- ブログ記事：ぶんた名物「壺漬けメガカルビ」 -->
+  <url>
+    <loc>https://yakiniku-bunta.com/blog/posts/post.html?slug=2026-01-08-special-menu</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- ブログ記事：お一人様・少人数でのご利用について -->
+  <url>
+    <loc>https://yakiniku-bunta.com/blog/posts/post.html?slug=2026-01-05-solo</loc>
+    <lastmod>2026-01-05</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- ブログ記事：安心してご来店いただくために -->
+  <url>
+    <loc>https://yakiniku-bunta.com/blog/posts/post.html?slug=2026-01-03-safety</loc>
+    <lastmod>2026-01-03</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.5</priority>
+  </url>
+
 </urlset>
