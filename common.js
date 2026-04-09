@@ -20,12 +20,6 @@
    * index.html          → ./
    * ------------------------------------------------------- */
   function getRootPath() {
-    const depth = location.pathname
-      .replace(/\/[^/]*$/, '')
-      .split('/')
-      .filter(s => s !== '')
-      .length;
-
     const scripts = document.querySelectorAll('script[src]');
     for (const s of scripts) {
       const src = s.getAttribute('src');
