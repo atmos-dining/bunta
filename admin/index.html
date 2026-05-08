@@ -7,5 +7,35 @@
 </head>
 <body>
   <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
+  <script>
+    const observer = new MutationObserver(() => {
+      if (document.getElementById("custom-add-btn")) return;
+      const addBtn = [...document.querySelectorAll("button")].find(b =>
+        b.textContent.includes("Add") || b.textContent.includes("追加")
+      );
+      if (!addBtn) return;
+      const fab = document.createElement("button");
+      fab.id = "custom-add-btn";
+      fab.textContent = "＋ 新規投稿を追加";
+      fab.style.cssText = [
+        "position:fixed","top:14px","left:50%","transform:translateX(-50%)",
+        "z-index:99999","background:#4285f4","color:#fff",
+        "border:none","padding:8px 24px","border-radius:6px",
+        "cursor:pointer","font-size:14px","font-weight:bold",
+        "box-shadow:0 2px 8px rgba(0,0,0,0.3)"
+      ].join(";");
+      fab.onclick = () => {
+        const target = [...document.querySelectorAll("button")].find(
+          b => b !== fab && (b.textContent.includes("Add") || b.textContent.includes("追加"))
+        );
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth", block: "center" });
+          setTimeout(() => target.click(), 300);
+        }
+      };
+      document.body.appendChild(fab);
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+  </script>
 </body>
 </html>
