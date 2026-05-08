@@ -25,9 +25,9 @@
         "box-shadow:0 2px 8px rgba(0,0,0,0.3)"
       ].join(";");
       fab.onclick = () => {
-        const target = [...document.querySelectorAll("button")].find(
-          b => b !== fab && (b.textContent.includes("Add") || b.textContent.includes("追加"))
-        );
+        const target = [...document.querySelectorAll("button")].filter(
+          b => b !== fab && (b.textContent.trim() === "Add item" || b.textContent.trim() === "追加")
+        ).at(-1);
         if (target) {
           target.scrollIntoView({ behavior: "smooth", block: "center" });
           setTimeout(() => target.click(), 300);
