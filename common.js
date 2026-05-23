@@ -190,11 +190,10 @@
     logoLink.style.display    = 'flex';
     logoLink.style.alignItems = 'center';
 
-    const RANGE        = 200;
-    const LOGO_COMPACT = 56;
+    const RANGE = 200;
 
+    // ボタンはCSS（display:none on mobile）に任せ、flex配置だけ設定
     if (reserveBtn) {
-      reserveBtn.style.display        = 'flex';
       reserveBtn.style.alignItems     = 'center';
       reserveBtn.style.justifyContent = 'center';
       reserveBtn.style.paddingTop     = '0';
@@ -205,25 +204,36 @@
     function lerp(a, b, t) { return a + (b - a) * t; }
 
     function onScroll() {
+      const isMobile = window.innerWidth <= 900;
       const t = Math.min(Math.max(window.scrollY / RANGE, 0), 1);
       const e = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
 
-      inner.style.paddingTop    = lerp(16, 0,  e) + 'px';
-      inner.style.paddingBottom = lerp(16, 0,  e) + 'px';
-      inner.style.paddingLeft   = lerp(32, 24, e) + 'px';
-      inner.style.paddingRight  = lerp(32, 0,  e) + 'px';
-
-      logoImg.style.height = lerp(80, LOGO_COMPACT, e) + 'px';
-
-      if (reserveBtn) {
-        reserveBtn.style.height       = lerp(46, LOGO_COMPACT, e) + 'px';
-        reserveBtn.style.borderRadius = lerp(4, 0, e) + 'px';
+      if (isMobile) {
+        // スマホ：最初から小さく、スクロールでさらにコンパクトに
+        inner.style.paddingTop    = lerp(6,  0,  e) + 'px';
+        inner.style.paddingBottom = lerp(6,  0,  e) + 'px';
+        inner.style.paddingLeft   = lerp(16, 12, e) + 'px';
+        inner.style.paddingRight  = lerp(16, 12, e) + 'px';
+        logoImg.style.height      = lerp(40, 32, e) + 'px';
+        // ボタンはCSSのdisplay:noneに任せる（JSで上書きしない）
+      } else {
+        inner.style.paddingTop    = lerp(16, 0,  e) + 'px';
+        inner.style.paddingBottom = lerp(16, 0,  e) + 'px';
+        inner.style.paddingLeft   = lerp(32, 24, e) + 'px';
+        inner.style.paddingRight  = lerp(32, 0,  e) + 'px';
+        logoImg.style.height      = lerp(80, 56, e) + 'px';
+        if (reserveBtn) {
+          reserveBtn.style.display      = 'flex';
+          reserveBtn.style.height       = lerp(46, 56, e) + 'px';
+          reserveBtn.style.borderRadius = lerp(4,  0,  e) + 'px';
+        }
       }
 
-      if (hRight) hRight.style.gap = lerp(16, 0, e) + 'px';
+      if (hRight) hRight.style.gap = lerp(isMobile ? 8 : 16, 0, e) + 'px';
     }
 
     window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
     onScroll();
   }
 
