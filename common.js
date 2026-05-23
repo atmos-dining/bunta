@@ -44,9 +44,11 @@
       .then(r => r.text())
       .then(html => {
         html = html.replace(/href="\.\//g, `href="${ROOT}`);
+        html = html.replace(/src="\.\//g, `src="${ROOT}`);
         mount.outerHTML = html;
         initNav();
         initDrawer();
+        initStickyHeader();
       })
       .catch(() => {});
   }
@@ -173,6 +175,87 @@
   }
 
   /* -------------------------------------------------------
+   * スティッキーヘッダー（スクロールでコンパクトに）
+   * ------------------------------------------------------- */
+  function initStickyHeader() {
+    const header     = document.querySelector('.site-header');
+    if (!header) return;
+    const inner      = header.querySelector('.header-inner');
+    const logoLink   = header.querySelector('.site-logo');
+    const logoImg    = header.querySelector('.site-logo-img');
+    const hRight     = header.querySelector('.header-right');
+    const reserveBtn = header.querySelector('.header-reserve');
+    if (!inner || !logoImg) return;
+
+    logoLink.style.display    = 'flex';
+    logoLink.style.alignItems = 'center';
+
+    const RANGE        = 200;
+    const LOGO_COMPACT = 56;
+
+    if (reserveBtn) {
+      reserveBtn.style.display        = 'flex';
+      reserveBtn.style.alignItems     = 'center';
+      reserveBtn.style.justifyContent = 'center';
+      reserveBtn.style.paddingTop     = '0';
+      reserveBtn.style.paddingBottom  = '0';
+      reserveBtn.style.boxSizing      = 'border-box';
+    }
+
+    function lerp(a, b, t) { return a + (b - a) * t; }
+
+    function onScroll() {
+      const t = Math.min(Math.max(window.scrollY / RANGE, 0), 1);
+      const e = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+
+      inner.style.paddingTop    = lerp(16, 0,  e) + 'px';
+      inner.style.paddingBottom = lerp(16, 0,  e) + 'px';
+      inner.style.paddingLeft   = lerp(32, 24, e) + 'px';
+      inner.style.paddingRight  = lerp(32, 0,  e) + 'px';
+
+      logoImg.style.height = lerp(80, LOGO_COMPACT, e) + 'px';
+
+      if (reserveBtn) {
+        reserveBtn.style.height       = lerp(46, LOGO_COMPACT, e) + 'px';
+        reserveBtn.style.borderRadius = lerp(4, 0, e) + 'px';
+      }
+
+      if (hRight) hRight.style.gap = lerp(16, 0, e) + 'px';
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  /* -------------------------------------------------------
+   * GA4 イベントトラッキング
+   * ------------------------------------------------------- */
+  function initGA4Tracking() {
+    document.addEventListener('click', function(e) {
+      if (typeof gtag !== 'function') return;
+      const a = e.target.closest('a');
+      if (!a) return;
+      const href = a.getAttribute('href') || '';
+
+      if (href.startsWith('tel:')) {
+        gtag('event', 'phone_click', {
+          event_category: 'contact',
+          event_label: href.replace('tel:', ''),
+          page_location: location.href
+        });
+      }
+
+      if (href.includes('toreta') || href.includes('autoreserve') || href.includes('hotpepper')) {
+        gtag('event', 'reservation_click', {
+          event_category: 'conversion',
+          event_label: a.textContent.trim().slice(0, 50),
+          page_location: location.href
+        });
+      }
+    });
+  }
+
+  /* -------------------------------------------------------
    * 初期化
    * ------------------------------------------------------- */
   document.addEventListener('DOMContentLoaded', () => {
@@ -180,6 +263,7 @@
     loadBottom();
     initPageTop();
     initScrollReveal();
+    initGA4Tracking();
   });
 
 })();

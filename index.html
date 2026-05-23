@@ -25,14 +25,12 @@
 <meta property="og:description" content="西新駅徒歩5分。壺漬けメガカルビやホルモン、名物焼肉を気軽に楽しめる大衆焼肉店。">
 <meta property="og:url" content="https://yakiniku-bunta.com/">
 <meta property="og:image" content="https://yakiniku-bunta.com/images/ogp.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="./style.css">
 
@@ -163,62 +161,64 @@
 <body class="is-home" data-page="home">
 <div id="top"></div>
 
-<!-- 共通ヘッダー差し込み先 -->
 <div id="shared-header"></div>
 
 <main id="main">
 
-  <!-- メインビジュアル -->
+  <!-- メインビジュアル（たれよし構造＋ぶんた動画） -->
   <section class="hero">
-    <video class="hero-video" autoplay muted loop playsinline>
-      <source src="./images/hero-bunta.mp4" type="video/mp4">
-    </video>
-    <div class="hero-inner">
-      <p class="hero-eyebrow">- 西新で焼肉なら -</p>
-      <h1 class="hero-title">西新の大衆焼肉ぶんた</h1>
-      <p class="hero-lead">
-        一人焼肉～最大30名様◎ 良いお肉をリーズナブルに。炭火で食べる焼肉は格別。
-      </p>
-      <p class="hero-lead">
-        仕事帰りの一杯から、仲間との飲み会、がっつり焼肉宴会まで。<br>
-        気取らずワイワイ楽しめる、大衆焼肉「ぶんた」へようこそ。
-      </p>
 
-      <div class="hero-actions">
-        <a href="tel:0924071179" class="btn-secondary"
-          onclick="gtag('event','click_tel',{event_label:'hero_tel'});">
-          電話で予約する
-        </a>
-        <a href="https://yoyaku.toreta.in/bunta" target="_blank" rel="noopener" class="btn-primary"
-          onclick="gtag('event','click_reserve',{event_label:'hero_reserve'});">
-          ネット予約はこちら
-        </a>
-      </div>
+    <!-- ① 白エリア：ブランドロゴ -->
+    <div class="hero-brand">
+      <h1 class="hero-logo">
+        <img src="./images/bunta_logo.png" alt="大衆焼肉ぶんた" class="hero-logo-img">
+      </h1>
     </div>
 
-    <a href="#topics" class="scroll-indicator" aria-label="次のセクションへスクロール">
-      <span class="scroll-indicator__text">SCROLL</span>
-      <span class="scroll-indicator__arrow">↓</span>
-    </a>
+    <!-- ② ビデオエリア -->
+    <div class="hero-visual">
+      <video class="hero-video" autoplay muted loop playsinline>
+        <source src="./images/hero-bunta.mp4" type="video/mp4">
+      </video>
+
+      <div class="hero-visual-content">
+        <div class="hero-rule" aria-hidden="true"></div>
+        <p class="hero-catch">一人焼肉から宴会まで。炭火の旨さ。</p>
+        <p class="hero-badge">宴会コース 4,000円〜 ／ 飲み放題あり</p>
+        <div class="hero-actions">
+          <a href="https://yoyaku.toreta.in/bunta"
+            target="_blank" rel="noopener" class="hero-btn-reserve">
+            ネット予約はこちら
+          </a>
+          <a href="tel:0924071179" class="hero-btn-tel">
+            <span class="hero-btn-tel__icon">☎</span>092-407-1179
+          </a>
+        </div>
+      </div>
+
+      <a href="#topics" class="scroll-indicator" aria-label="次のセクションへ">
+        <span class="scroll-indicator__line"></span>
+        <span class="scroll-indicator__text">SCROLL</span>
+      </a>
+    </div>
+
   </section>
 
-  <!-- トピックス -->
+  <!-- トピックス（ぶんた名物） -->
   <section id="topics" class="section topics">
     <div class="section-inner">
-      <h2 class="section-title">トピックス</h2>
+      <h2 class="section-title">ぶんたの名物</h2>
       <div class="topics-grid">
         <article class="topic-card">
           <div class="topic-image topic-image-1"></div>
           <h3>ぶんた名物 たれ漬けメガカルビ</h3>
           <p>特製ダレにじっくり漬け込んだ名物メガカルビ。豪快に焼いて、みんなでシェアして楽しめる人気メニューです。</p>
         </article>
-
         <article class="topic-card">
           <div class="topic-image topic-image-2"></div>
           <h3>ホルモン好きも大満足</h3>
           <p>極上丸腸をはじめ、ホルモンメニューも充実。ビールやハイボールとの相性も抜群です。</p>
         </article>
-
         <article class="topic-card">
           <div class="topic-image topic-image-3"></div>
           <h3>少人数から大人数までOK</h3>
@@ -232,9 +232,11 @@
   <section id="concept" class="section concept">
     <div class="section-inner concept-inner">
       <div class="concept-text">
-        <h2 class="section-title">名物焼肉×お酒<br>西新の大衆焼肉「ぶんた」</h2>
-        <p>「旨さと価格に妥協なし」を合言葉に、気軽に通える大衆焼肉として地域の方に愛されてきた「大衆焼肉ぶんた」。</p>
-        <p>たれ漬けメガカルビをはじめとした名物メニューに、ホルモン、一品料理まで幅広くご用意。飲み放題付きコースも各種取り揃えております。</p>
+        <h2 class="section-title" style="text-align:left; left:auto; transform:none;">
+          名物焼肉×お酒<br>西新の大衆焼肉。
+        </h2>
+        <p>「大衆焼肉ぶんた」は、西新駅徒歩5分の気軽に通える焼肉店です。</p>
+        <p>「旨さと価格に妥協なし」を合言葉に、たれ漬けメガカルビをはじめとした名物メニューに、ホルモン、一品料理まで幅広くご用意。飲み放題付きコースも各種取り揃えております。</p>
         <p>仕事帰りの一杯、友人との飲み会、会社宴会、打ち上げなど、さまざまなシーンでご利用ください。</p>
       </div>
       <div class="concept-image concept-main-image"></div>
@@ -245,48 +247,65 @@
   <section id="course" class="section course">
     <div class="section-inner">
       <h2 class="section-title">ご宴会コース</h2>
-      <p class="section-lead">飲み放題付きの焼肉宴会コースを3種類ご用意。<br>ご予算やシーンに合わせてお選びいただけます。</p>
+      <p class="section-lead">
+        飲み放題付きの焼肉宴会コースを3種類ご用意。<br>
+        ご予算やシーンに合わせてお選びいただけます。
+      </p>
 
       <div class="course-grid">
         <article class="course-card">
+          <div class="course-badges">
+            <span class="badge badge-gold">人気 No.1</span>
+          </div>
           <h3>おためしコース</h3>
-          <p class="course-price">お一人様 4,000円（税込）〜</p>
+          <p class="course-price">4,000<small>円</small></p>
+          <p class="course-price-note">（税込・おひとり様）</p>
+          <p class="course-lead">2時間飲み放題付き</p>
           <ul class="course-list">
             <li>前菜2点盛り</li>
             <li>名物！ネギ塩Pタン</li>
             <li>中落ちカルビ等々</li>
-            <li>2時間飲み放題付き</li>
           </ul>
         </article>
 
         <article class="course-card">
+          <div class="course-badges">
+            <span class="badge badge-red">おすすめ</span>
+          </div>
           <h3>ぶんた名物コース</h3>
-          <p class="course-price">お一人様 4,500円（税込）〜</p>
+          <p class="course-price">4,500<small>円</small></p>
+          <p class="course-price-note">（税込・おひとり様）</p>
+          <p class="course-lead">2時間飲み放題付き</p>
           <ul class="course-list">
             <li>名物！ネギ塩Pタン</li>
             <li>たれ漬けメガカルビ！</li>
             <li>焼き野菜の盛り合わせ等々</li>
-            <li>2時間飲み放題付き</li>
           </ul>
         </article>
 
         <article class="course-card">
+          <div class="course-badges">
+            <span class="badge badge-gold">贅沢</span>
+          </div>
           <h3>ぶんた極みコース</h3>
-          <p class="course-price">お一人様 5,000円（税込）〜</p>
+          <p class="course-price">5,000<small>円</small></p>
+          <p class="course-price-note">（税込・おひとり様）</p>
+          <p class="course-lead">2時間飲み放題付き</p>
           <ul class="course-list">
             <li>たれ漬けメガカルビ！</li>
             <li>名物メニューを贅沢に盛り込んだ内容</li>
             <li>特上3種盛り等々</li>
-            <li>2時間飲み放題付き</li>
           </ul>
         </article>
       </div>
 
       <div class="more-link">
-        <a href="./course.html" class="btn-secondary">もっと見る →</a>
+        <a class="btn-secondary" href="./course.html">コース詳細を見る →</a>
       </div>
 
-      <p class="course-note">※コース内容・価格は一例です。時期により変更となる場合がございます。<br>詳細は店舗までお問い合わせください。</p>
+      <p class="course-note">
+        ※コース内容・価格は一例です。時期により変更となる場合がございます。詳細は店舗までお問い合わせください。
+      </p>
     </div>
   </section>
 
@@ -294,7 +313,7 @@
   <section id="menu" class="section menu">
     <div class="section-inner">
       <h2 class="section-title">お料理</h2>
-      <p class="section-lead">名物のたれ漬けメガカルビをはじめ、ホルモン、肉寿司、一品料理まで<br>お酒が進むメニューを多数ご用意しています。</p>
+      <p class="section-lead">名物のたれ漬けメガカルビをはじめ、ホルモン、一品料理まで<br>お酒が進むメニューを多数ご用意しています。</p>
 
       <div class="menu-grid">
         <article class="menu-card">
@@ -302,22 +321,20 @@
           <h3>たれ漬けメガカルビ</h3>
           <p>特製醤油ダレに漬け込んだ迫力満点のメガカルビ。テーブルが一気に盛り上がるぶんた定番の一品です。</p>
         </article>
-
         <article class="menu-card">
           <div class="menu-image menu-image-2"></div>
           <h3>極上丸腸</h3>
           <p>プリっとした食感と、口の中に広がる甘い脂がたまらない極上丸腸。ビールやハイボールと一緒にどうぞ。</p>
         </article>
-
         <article class="menu-card">
           <div class="menu-image menu-image-3"></div>
-          <h3>上質白ごはん・一品料理</h3>
+          <h3>一品料理・〆もの</h3>
           <p>サラダ、キムチ、〆のごはんものまで、焼肉と一緒に楽しめるメニューを豊富に取り揃えています。</p>
         </article>
       </div>
 
       <div class="more-link">
-        <a href="./menu.html" class="btn-secondary">お料理をもっと見る →</a>
+        <a href="./menu.html" class="btn-secondary">お料理メニューを見る →</a>
       </div>
     </div>
   </section>
@@ -334,13 +351,11 @@
           <h3>生ビール・ハイボール</h3>
           <p>キンキンに冷えた生ビールとハイボールは、どの焼肉メニューとも相性抜群。まずは一杯どうぞ。</p>
         </article>
-
         <article class="drink-card">
           <div class="drink-image drink-image-2"></div>
           <h3>サワー・カクテル</h3>
           <p>レモンサワーなどの定番から、飲みやすいカクテルまでご用意。飲み放題メニューも充実しています。</p>
         </article>
-
         <article class="drink-card">
           <div class="drink-image drink-image-3"></div>
           <h3>焼酎・梅酒</h3>
@@ -349,7 +364,7 @@
       </div>
 
       <div class="more-link">
-        <a href="./drink.html" class="btn-secondary">ドリンクをもっと見る →</a>
+        <a href="./drink.html" class="btn-secondary">ドリンクメニューを見る →</a>
       </div>
     </div>
   </section>
@@ -358,10 +373,12 @@
   <section id="space" class="section space">
     <div class="section-inner space-inner">
       <div class="space-text">
-        <h2 class="section-title">店内・空間</h2>
-        <p>総席数 40席前後。カウンター席、テーブル席、掘りごたつ席をご用意しております。</p>
-        <p>お一人様でのさく飲みや、少人数での飲み会はもちろん、グループでのご宴会にも対応可能です。</p>
-        <p>席のレイアウト変更や貸切などについても、お気軽にご相談ください。</p>
+        <h2 class="section-title" style="text-align:left; left:auto; transform:none;">
+          カウンターから宴会まで<br>気軽に使える空間
+        </h2>
+        <p>カウンター席、テーブル席、掘りごたつ席をご用意。お一人様でのさく飲みや、少人数での飲み会はもちろん、グループでのご宴会にも対応可能です。</p>
+        <p>全席禁煙で、お子様連れも大歓迎。席のレイアウト変更や貸切などについても、お気軽にご相談ください。</p>
+        <p>宴会・貸切のご相談はお電話またはネット予約ページよりお気軽にどうぞ。</p>
       </div>
       <div class="space-image space-main-image"></div>
     </div>
@@ -376,7 +393,7 @@
       <div class="blog-grid" id="blog-latest-grid">
         <article class="blog-card">
           <a href="./blog/index.html">
-            <div class="blog-body">
+            <div class="blog-body" style="padding:24px;">
               <h3 class="blog-title">ブログ一覧を見る</h3>
               <p class="blog-excerpt">最新情報やおすすめ記事を掲載しています。</p>
             </div>
@@ -390,11 +407,9 @@
     </div>
   </section>
 
-  <!-- 共通フッター差し込み先 -->
   <div id="shared-bottom"></div>
 
-  <!-- ページトップ -->
-  <a href="#top" class="page-top" aria-label="ページの先頭へ戻る">＾</a>
+  <a href="#top" class="page-top" aria-label="ページの先頭へ"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg></a>
 
 </main>
 
@@ -423,8 +438,8 @@
       const top3 = posts.slice(0, 3);
       grid.innerHTML = '';
       top3.forEach(p => {
-        const img = p.image ? String(p.image).replace(/^\.\//, './blog/') : '';
-        const bg  = img ? `background-image:url('${esc(img)}');` : '';
+        const img = p.image ? String(p.image).replace(/^\.\.\//, './') : '';
+        const bg  = img ? `background-image:url('${esc(img)}');` : 'background:#f0f0f0;';
         const el  = document.createElement('article');
         el.className = 'blog-card';
         el.innerHTML = `
@@ -443,7 +458,7 @@
       grid.innerHTML = `
         <article class="blog-card">
           <a href="./blog/index.html">
-            <div class="blog-body">
+            <div class="blog-body" style="padding:24px;">
               <h3 class="blog-title">ブログ一覧を見る</h3>
               <p class="blog-excerpt">最新情報やおすすめ記事を掲載しています。</p>
             </div>
