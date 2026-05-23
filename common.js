@@ -214,8 +214,11 @@
         inner.style.paddingBottom = '';
         inner.style.paddingLeft   = '';
         inner.style.paddingRight  = '';
-        logoImg.style.height      = '';
-        // ボタンサイズはCSSに任せる
+        logoImg.style.height      = '40px'; // CSS default(80px)より小さく固定
+        if (reserveBtn) {
+          reserveBtn.style.height       = ''; // desktopブランチの残滓をリセット
+          reserveBtn.style.borderRadius = '';
+        }
       } else {
         inner.style.paddingTop    = lerp(16, 0,  e) + 'px';
         inner.style.paddingBottom = lerp(16, 0,  e) + 'px';
