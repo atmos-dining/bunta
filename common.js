@@ -215,7 +215,9 @@
         inner.style.paddingLeft   = lerp(16, 12, e) + 'px';
         inner.style.paddingRight  = lerp(16, 12, e) + 'px';
         logoImg.style.height      = lerp(40, 32, e) + 'px';
-        // ボタンはCSSのdisplay:noneに任せる（JSで上書きしない）
+        if (reserveBtn) {
+          reserveBtn.style.display = 'flex';
+        }
       } else {
         inner.style.paddingTop    = lerp(16, 0,  e) + 'px';
         inner.style.paddingBottom = lerp(16, 0,  e) + 'px';
