@@ -209,15 +209,13 @@
       const e = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
 
       if (isMobile) {
-        // スマホ：最初から小さく、スクロールでさらにコンパクトに
-        inner.style.paddingTop    = lerp(6,  0,  e) + 'px';
-        inner.style.paddingBottom = lerp(6,  0,  e) + 'px';
-        inner.style.paddingLeft   = lerp(16, 12, e) + 'px';
-        inner.style.paddingRight  = lerp(16, 12, e) + 'px';
-        logoImg.style.height      = lerp(40, 32, e) + 'px';
-        if (reserveBtn) {
-          reserveBtn.style.display = 'flex';
-        }
+        // スマホ：固定サイズ（スクロールで変化しない）
+        inner.style.paddingTop    = '';
+        inner.style.paddingBottom = '';
+        inner.style.paddingLeft   = '';
+        inner.style.paddingRight  = '';
+        logoImg.style.height      = '';
+        // ボタンサイズはCSSに任せる
       } else {
         inner.style.paddingTop    = lerp(16, 0,  e) + 'px';
         inner.style.paddingBottom = lerp(16, 0,  e) + 'px';
@@ -231,7 +229,7 @@
         }
       }
 
-      if (hRight) hRight.style.gap = lerp(isMobile ? 8 : 16, 0, e) + 'px';
+      if (hRight) hRight.style.gap = isMobile ? '' : lerp(16, 0, e) + 'px';
     }
 
     window.addEventListener('scroll', onScroll, { passive: true });

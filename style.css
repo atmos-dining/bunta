@@ -1714,9 +1714,14 @@ body:not(.is-home) main { padding-top: 0; }
 
   .header-reserve {
     font-size: 11px;
-    padding: 6px 10px;
+    height: 36px;
+    padding: 0 10px;
     white-space: nowrap;
     border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
   }
 
   .header-inner { padding: 10px 16px; }
