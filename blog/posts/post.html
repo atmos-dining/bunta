@@ -150,12 +150,18 @@
   }
 
   try {
-    const res = await fetch('../posts.json', { cache: 'no-store' });
-    if (!res.ok) throw new Error('posts.json 読み込みエラー');
-    const data = await res.json();
-    const posts = data.posts ?? data;
-
-    const post = posts.find(p => p.slug === slug);
+    // 個別ファイル（posts_data/）を優先、なければ posts.json にフォールバック
+    let post = null;
+    const individualRes = await fetch(`../posts_data/${encodeURIComponent(slug)}.json`, { cache: 'no-store' });
+    if (individualRes.ok) {
+      post = await individualRes.json();
+    } else {
+      const res = await fetch('../posts.json', { cache: 'no-store' });
+      if (!res.ok) throw new Error('記事データの読み込みエラー');
+      const data = await res.json();
+      const posts = data.posts ?? data;
+      post = posts.find(p => p.slug === slug);
+    }
     if (!post) throw new Error('記事が見つかりません: ' + slug);
 
     // title / meta更新
