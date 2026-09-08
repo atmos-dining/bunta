@@ -13,6 +13,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ブログ｜大衆焼肉ぶんた</title>
 <meta name="description" content="大衆焼肉ぶんたのブログ記事。">
+<link rel="canonical" id="canonical-link" href="https://yakiniku-bunta.com/blog/">
 
 <link rel="icon" href="../../favicon-bunta.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -87,7 +88,7 @@
 <meta property="og:site_name" content="大衆焼肉ぶんた">
 <meta property="og:title" content="ブログ｜大衆焼肉ぶんた">
 <meta property="og:description" content="大衆焼肉ぶんたのブログ記事。">
-<meta property="og:url" content="https://yakiniku-bunta.com/blog/posts/">
+<meta property="og:url" id="og-url" content="https://yakiniku-bunta.com/blog/">
 <meta property="og:image" content="https://yakiniku-bunta.com/images/ogp.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -105,9 +106,9 @@
 
     <!-- パンくず -->
     <nav class="post-breadcrumb">
-      <a href="../../index.html">トップ</a>
+      <a href="/">トップ</a>
       <span>/</span>
-      <a href="../index.html">ブログ・お知らせ</a>
+      <a href="/blog/">ブログ・お知らせ</a>
       <span>/</span>
       <span id="bc-title">記事</span>
     </nav>
@@ -145,23 +146,21 @@
   }
 
   if (!slug) {
-    contentEl.innerHTML = '<p>記事が見つかりませんでした。<br><a href="../index.html" style="text-decoration:underline">ブログ一覧へ</a></p>';
+    contentEl.innerHTML = '<p>記事が見つかりませんでした。<br><a href="/blog/" style="text-decoration:underline">ブログ一覧へ</a></p>';
     return;
   }
 
+  const canonicalUrl = `https://yakiniku-bunta.com/blog/posts/post.html?slug=${encodeURIComponent(slug)}`;
+  document.getElementById('canonical-link')?.setAttribute('href', canonicalUrl);
+  document.getElementById('og-url')?.setAttribute('content', canonicalUrl);
+
   try {
-    // 個別ファイル（posts_data/）を優先、なければ posts.json にフォールバック
-    let post = null;
-    const individualRes = await fetch(`../posts_data/${encodeURIComponent(slug)}.json`, { cache: 'no-store' });
-    if (individualRes.ok) {
-      post = await individualRes.json();
-    } else {
-      const res = await fetch('../posts.json', { cache: 'no-store' });
-      if (!res.ok) throw new Error('記事データの読み込みエラー');
-      const data = await res.json();
-      const posts = data.posts ?? data;
-      post = posts.find(p => p.slug === slug);
-    }
+    // post.html は posts.json のみを参照する（CLAUDE.md のルール）
+    const res = await fetch('../posts.json', { cache: 'no-store' });
+    if (!res.ok) throw new Error('記事データの読み込みエラー');
+    const data = await res.json();
+    const posts = data.posts ?? data;
+    const post = posts.find(p => p.slug === slug);
     if (!post) throw new Error('記事が見つかりません: ' + slug);
 
     // title / meta更新
@@ -193,14 +192,14 @@
       ${imgHtml}
       <div class="post-body">${bodyHtml}</div>
       <div class="post-footer">
-        <a href="../index.html">← ブログ一覧へ戻る</a>
+        <a href="/blog/">← ブログ一覧へ戻る</a>
         <span>|</span>
-        <a href="../../index.html">トップへ</a>
+        <a href="/">トップへ</a>
       </div>
     `;
 
   } catch(e) {
-    contentEl.innerHTML = `<p>エラー：${esc(e.message)}<br><a href="../index.html" style="text-decoration:underline">ブログ一覧へ</a></p>`;
+    contentEl.innerHTML = `<p>エラー：${esc(e.message)}<br><a href="/blog/" style="text-decoration:underline">ブログ一覧へ</a></p>`;
     console.error(e);
   }
 })();

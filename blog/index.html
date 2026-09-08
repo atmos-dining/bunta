@@ -94,7 +94,7 @@
     }
 
     listEl.innerHTML = posts.map(p => {
-      const href = `./posts/post.html?slug=${encodeURIComponent(p.slug)}`;
+      const href = `/blog/posts/post.html?slug=${encodeURIComponent(p.slug)}`;
       const bg = p.image ? `style="background-image:url('${esc(p.image)}');"` : '';
       return `
         <article class="blog-card">
