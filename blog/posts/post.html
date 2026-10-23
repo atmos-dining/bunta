@@ -93,6 +93,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<script src="../../vendor/blog-security.js"></script>
 </head>
 
 <body data-page="blog">
@@ -126,7 +127,8 @@
 </main>
 
 <!-- blog/posts/ は2階層下なので ../../common.js -->
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="../../vendor/dompurify/purify.min.js"></script>
+<script src="../../vendor/marked/marked.umd.js"></script>
 <script src="../../common.js"></script>
 <script>
 (async () => {
@@ -178,7 +180,7 @@
     }
 
     const imgHtml = imgSrc
-      ? `<img src="${esc(imgSrc)}" alt="${esc(post.title)}" class="post-hero" loading="lazy">`
+      ? `<img src="${esc(BlogSecurity.imageURL(imgSrc))}" alt="${esc(post.title)}" class="post-hero" loading="lazy">`
       : '';
 
     const rawBody = post.body || `<p>${esc(post.excerpt)}</p>`;
@@ -190,7 +192,7 @@
       <p class="post-date">${fmtDate(post.date)}</p>
       <h1 class="post-title">${esc(post.title)}</h1>
       ${imgHtml}
-      <div class="post-body">${bodyHtml}</div>
+      <div class="post-body">${BlogSecurity.sanitizeHTML(bodyHtml)}</div>
       <div class="post-footer">
         <a href="/blog/">← ブログ一覧へ戻る</a>
         <span>|</span>
